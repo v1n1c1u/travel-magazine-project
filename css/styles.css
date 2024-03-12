@@ -44,24 +44,86 @@ header{
     left: 0;
     height: 50vh;
     background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.912570130591299) 68%);
+    font-family: sans-serif;
 }
 header nav, header nav ul{
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-color: transparent;
 }
-header nav ul input{
-    border: 2px solid white;
+#menu ul{
+    background-color: rgba(0,0,0,0.5);
+}
+#menu ul li{
+    order:2;
+    display: flex;
+    align-items: center;
+}
+#menu ul li a,
+#menu ul li form{
+    padding: 1rem;
+}
+#menu ul li a{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 1.2px;
+    color: gray;
+    width: 100%;
+    min-width: 85px;
+    box-sizing: border-box;
+}
+#menu ul li a:hover{
+    color:white;
+}
+#menu ul #home-search{
+    order:1;
+}
+#menu ul #home-search form{
+    width: 100%;
+    position: relative;
+    text-align: right;
+    margin-right: 1rem;
+}
+#menu ul #home-search input{
+    border: 1px solid white;
     background-color: transparent;
     border-radius: 50px;
-    height: 30px;
+    margin: auto;
+    height: 40px;
     padding: 0 1em;
+    width: 100%;
+    max-width: 350px;
+}
+#menu ul #home-search input::placeholder{
+    color: gray;
+    font-style: italic;
+    position: relative;
+}
+#menu ul #home-search form button {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 40px;
+    position: absolute;
+    top:35%;
+    right: 5%;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    background: url("../assets/svg/icons8-search-16.svg") bottom center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    opacity: 0.7;
+}
+#menu ul #home-search form button:hover {
+    opacity: 1;
 }
 #logo-wrapper{
     display: flex;
     justify-content: space-between;
 }
-.mobile-menu{
+.menu-list{
     display: none;
 }
 .show-menu{
@@ -72,7 +134,7 @@ header nav ul input{
     width: 50%;
     background-color:aqua;
 }
-#logo-wrapper #logo{
+#logo-wrapper #logo-img{
     width: 100%;
     height: 100%;
 }
@@ -81,19 +143,15 @@ header nav ul input{
     padding: 1rem;
 }
 #menu-toggle button{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    color: white;
+    border: none;
+    background-color: inherit;
     padding: 0.5rem 1rem;
 }
-header nav ul{
-    background-color: rgba(0,0,0,0.5);
-}
-header nav ul li{
-    padding: 1rem;
-    text-align: center;
-    width: 100%;
-    color: white;
-    display: flex;
-    align-items: center;
+#menu-toggle button:hover{
+    cursor: pointer;
 }
 
 /* MAIN */
@@ -103,7 +161,7 @@ header nav ul li{
     width: 100%;
 }
 .home-articles{
-    columns: 1fr;
+    grid-template-columns: 1fr;
     gap: 1.2rem;
 }
 .home-articles article,
@@ -120,13 +178,26 @@ aside{
     justify-content: space-between;
 }
 aside section{
- margin: 1rem 0;
+    margin: 1rem 0;
+}
+.aside-content{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+.aside-content .aside-article-thumb article{
+    min-width: 350px;
+    min-height: 500px;
 }
 /*footer*/
 footer {
     display: flex;
     flex-direction: column;
     background-color: lightgray;
+    color: black;
+}
+footer *{
+    color: black;
 }
 footer h3{
     text-align: center;
@@ -142,11 +213,14 @@ footer form{
     justify-content: space-between;
 }
 footer form input{
-    min-width: 80%;
+    margin-bottom: 1rem;
+    min-width: 60%;
+    min-height: 40px;
 }
 footer form button{
     min-width: 150px;
     border-radius: 50px;
+    min-height: 40px;
 }
 .newsletter-subscription{
     height: 25vh;
@@ -195,6 +269,12 @@ small{
         height: 15vh;
         align-items: center;
     }
+    .newsletter-subscription #title{
+        width: 20%;
+    }
+    .newsletter-subscription form{
+        width: 80%;
+    }
     footer form  *{
         margin: 0 1vw;
     }
@@ -204,8 +284,11 @@ small{
     #menu-toggle{
         display: none;
     }
-    .mobile-menu{
+    .menu-list{
         display: block;
+    }
+    header{
+        padding-top:1vh;
     }
     header nav,
     header nav ul{
@@ -213,12 +296,24 @@ small{
         justify-content: space-between;
     }
     header nav{
-        border-bottom: 2px solid white;
+        border-bottom: 1px solid white;
         width: 90%;
+        height:10vh;
         margin: auto;
+        align-items: center;
     }
     header nav ul{
         justify-content: flex-end;
+    }
+    #menu ul #home-search form button {
+        top:38%;
+        right: 8%;
+    }
+    #menu ul #home-search{
+        order:2;
+    }
+    #menu ul{
+        background-color: transparent;
     }
     .newsletter-subscription{
         flex-direction: row;

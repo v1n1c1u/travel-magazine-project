@@ -6,7 +6,7 @@
     <script src="./js/index.js" defer></script>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <title>Odyssey</title>
 </head>
 <body>
@@ -14,20 +14,22 @@
         <nav>
             <div id="logo-wrapper">
                 <a href="./index.html">
-                    <img src="" alt="Odyssey Logo"  id="logo">
+                    <img src="./assets/imgs/logo.png" alt="Odyssey Logo"  id="logo-img">
                 </a>
                 <div id="menu-toggle"><button aria-label="Toggle menu" id="toggle-button"><i class="fa-solid fa-bars"></i></button></div>
             </div>
-            <div id="menu" class="mobile-menu">
+            <div id="menu" class="menu-list">
                 <ul>
                     <li><a href="#">Stories</a></li>
                     <li><a href="#">Authors</a></li>
                     <li><a href="#">Sources</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">About</a></li>
-                    <li>
-                        <form action="">
-                            <input type="text" name="" id="" placeholder="Search">
+                    <li  id="home-search">
+                        <form action="#" method="get">
+                            <!--<a target="_blank" href="https://icons8.com/icon/W0xu6u7K9A0F/search">Search</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
+                            <input type="search" name="search" placeholder="Search">
+                            <button type="submit">Search</button>
                         </form>
                     </li>
                 </ul>
@@ -43,25 +45,33 @@
                 <h2>Articles</h2>
                 <div class="grid home-articles">
                     <article>
-                        Main article
+                        <h2>Main Article</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum ex harum accusantium nisi! Fugit eligendi unde id ab soluta natus amet vero est similique nemo. Itaque veritatis provident expedita quisquam obcaecati, odio eum perferendis molestias temporibus fugiat, sequi similique. Eius rem optio porro voluptatibus, illo molestias nobis ad! Quaerat.</p>
+                    
                     </article>
                     <article>
-                        minor article
+                        <h2>Minor Article</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum ex harum accusantium nisi! Fugit eligendi unde id ab soluta natus amet vero est similique nemo. Itaque veritatis provident expedita quisquam obcaecati, odio eum perferendis molestias temporibus fugiat, sequi similique. Eius rem optio porro voluptatibus, illo molestias nobis ad! Quaerat.</p>
                     </article>
                     <article>
-                        minor article
+                        <h2>Minor Article</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum ex harum accusantium nisi! Fugit eligendi unde id ab soluta natus amet vero est similique nemo. Itaque veritatis provident expedita quisquam obcaecati, odio eum perferendis molestias temporibus fugiat, sequi similique. Eius rem optio porro voluptatibus, illo molestias nobis ad! Quaerat.</p>
                     </article>
                     <article>
-                        minor article
+                        <h2>Minor Article</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum ex harum accusantium nisi! Fugit eligendi unde id ab soluta natus amet vero est similique nemo. Itaque veritatis provident expedita quisquam obcaecati, odio eum perferendis molestias temporibus fugiat, sequi similique. Eius rem optio porro voluptatibus, illo molestias nobis ad! Quaerat.</p>
                     </article>
                     <article>
-                        minor article
+                        <h2>Minor Article</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum ex harum accusantium nisi! Fugit eligendi unde id ab soluta natus amet vero est similique nemo. Itaque veritatis provident expedita quisquam obcaecati, odio eum perferendis molestias temporibus fugiat, sequi similique. Eius rem optio porro voluptatibus, illo molestias nobis ad! Quaerat.</p>
                     </article>
                     <article>
-                        minor article
+                        <h2>Minor Article</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum ex harum accusantium nisi! Fugit eligendi unde id ab soluta natus amet vero est similique nemo. Itaque veritatis provident expedita quisquam obcaecati, odio eum perferendis molestias temporibus fugiat, sequi similique. Eius rem optio porro voluptatibus, illo molestias nobis ad! Quaerat.</p>
                     </article>
                     <article>
-                        minor article
+                        <h2>Minor Article</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum ex harum accusantium nisi! Fugit eligendi unde id ab soluta natus amet vero est similique nemo. Itaque veritatis provident expedita quisquam obcaecati, odio eum perferendis molestias temporibus fugiat, sequi similique. Eius rem optio porro voluptatibus, illo molestias nobis ad! Quaerat.</p>
                     </article>
                 </div>
             </div>
@@ -70,12 +80,23 @@
                     <h3>Most read</h3>
                     <div class="aside-content">
                         <div class="aside-article-thumb">
-                            <article>Article</article>
+                            <article>
+                                <h2>Article</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum ex harum accusantium nisi! Fugit eligendi unde id ab soluta natus amet vero est similique nemo. Itaque veritatis provident expedita quisquam obcaecati, odio eum perferendis molestias temporibus fugiat, sequi similique. Eius rem optio porro voluptatibus, illo molestias nobis ad! Quaerat.</p>
+                            </article>
                         </div>
                         <div class="aside-article-thumb">
-                            <article>Article</article>
+                            <article>
+                                <h2>Article</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum ex harum accusantium nisi! Fugit eligendi unde id ab soluta natus amet vero est similique nemo. Itaque veritatis provident expedita quisquam obcaecati, odio eum perferendis molestias temporibus fugiat, sequi similique. Eius rem optio porro voluptatibus, illo molestias nobis ad! Quaerat.</p>
+                            </article>
+                        </div>
                         <div class="aside-article -thumb">
-                            <article>Article</article>
+                            <article>
+                                <h2>Article</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eum ex harum accusantium nisi! Fugit eligendi unde id ab soluta natus amet vero est similique nemo. Itaque veritatis provident expedita quisquam obcaecati, odio eum perferendis molestias temporibus fugiat, sequi similique. Eius rem optio porro voluptatibus, illo molestias nobis ad! Quaerat.</p>
+                            </article>
+                        </div>
                     </div>
                 </section>
                 <section>
@@ -99,7 +120,7 @@
         <div class="content">
             <div class="newsletter-subscription">
                 <div id="title"><h3>Subscribe to our newsletter!</h3></div>
-                <form action="" method="get">
+                <form action="#" method="get">
                     <input type="text" placeholder="Your e-mail">
                     <button type="submit">Subscribe</button>
                 </form>
@@ -109,7 +130,7 @@
                 <div class="footer-menu-wrapper">
                     <div id="footer-logo-wrapper">
                         <a href="./index.html" id="logo">
-                            <img src="" alt="Odyssey Logo">
+                            <img src="./assets/imgs/logo" alt="Odyssey Logo">
                         </a>
                     </div>
                     <ul id="footer-menu">
@@ -128,7 +149,7 @@
                     <li><a href="#"><i class="fa-brands fa-reddit"></i></a></li>
                 </ul>
             </div>
-            <small>Vin & Bee &copy; 2024</small>
+            <small>Vin & Bee Inc. &copy; 2024</small>
         </div>
     </footer>
 </body>
