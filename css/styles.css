@@ -1,6 +1,243 @@
+/*General styles*/
 html, body{
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+:root{
+    --bgColor: white;
+    --primaryColor: black;
+    --secondaryColor: gray;
+    --accentColor: darkslateblue;
+}
+header, main, footer{
+    width: 100vw;
+}
+.grid{
+    display: grid;
+}
+.content{
+    width: 90vw;
+    margin: auto;
+}
+nav ul,
+footer ul{
+    list-style: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+ul li a{
+    text-decoration: none;
+    color: white;
+}
+/*Header*/
+header{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 50vh;
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.912570130591299) 68%);
+}
+header nav, header nav ul{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+header nav ul input{
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 50px;
+    height: 30px;
+    padding: 0 1em;
+}
+#logo-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.mobile-menu{
+    display: none;
+}
+.show-menu{
+    display: block;
+}
+#logo-wrapper a,
+#footer-logo-wrapper a{
+    width: 50%;
+    background-color:aqua;
+}
+#logo-wrapper #logo{
+    width: 100%;
+    height: 100%;
+}
+#menu-toggle{
+    text-align: right;
+    padding: 1rem;
+}
+#menu-toggle button{
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+}
+header nav ul{
+    background-color: rgba(0,0,0,0.5);
+}
+header nav ul li{
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+/* MAIN */
+#gallery{
+    height: 80vh;
+    background-color:rgb(177, 176, 176);
+    width: 100%;
+}
+.home-articles{
+    columns: 1fr;
+    gap: 1.2rem;
+}
+.home-articles article,
+aside article,
+.aside-profile{
+    width: 100%;
+    height: 200px;
+    background-color: gray;
+    margin: 1rem 0;
+}
+aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+aside section{
+ margin: 1rem 0;
+}
+/*footer*/
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+}
+footer h3{
+    text-align: center;
+}
+.footer-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+footer form{
+    display: flex;
+    flex-direction: column;
+    height: 45px;
+    justify-content: space-between;
+}
+footer form input{
+    min-width: 80%;
+}
+footer form button{
+    min-width: 150px;
+    border-radius: 50px;
+}
+.newsletter-subscription{
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer-menu-wrapper{
+    display: flex;
+    height: 15vh;
+    justify-content: center;
+}
+
+#footer-menu{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    text-align: center;
+    height:10vh;
+}
+#footer-socials{
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.footer-menu-wrapper,
+#footer-socials,
+small{
+    margin: 5vh 0;
+    box-sizing: border-box;
+}
+small{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+/*Large Mobile*/
+@media only screen and (min-width:500px){
+    footer form{
+        flex-direction: row;
+        justify-content: center;
+    }
+    .newsletter-subscription{
+        height: 15vh;
+        align-items: center;
+    }
+    footer form  *{
+        margin: 0 1vw;
+    }
+}
+/*Tablet*/
+@media only screen and (min-width: 800px){
+    #menu-toggle{
+        display: none;
+    }
+    .mobile-menu{
+        display: block;
+    }
+    header nav,
+    header nav ul{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header nav{
+        border-bottom: 2px solid white;
+        width: 90%;
+        margin: auto;
+    }
+    header nav ul{
+        justify-content: flex-end;
+    }
+    .newsletter-subscription{
+        flex-direction: row;
+        width: 100%;
+    }
+    .footer-wrapper{
+        flex-direction: row;
+        width: 90%;
+        margin: auto;
+    }
+    .footer-menu-wrapper{
+        width: 60%;
+        height: min-content;
+    }
+    #footer-socials{
+        width: 40%;
+    }
+}
+/*Desktop*/
+@media only screen and (min-width: 1000px){
+    
 }
