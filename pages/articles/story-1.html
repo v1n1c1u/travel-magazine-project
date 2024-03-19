@@ -6,13 +6,133 @@
     <script src="../../js/index.js" defer></script>
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <title>Magazine</title>
 </head>
 <body>
     <header>
-        
+        <nav>
+            <div id="logo-wrapper">
+                <a href="../../index.html">
+                    <img src="../../assets/imgs/logo.png" alt="Odyssey Logo"  id="logo-img">
+                </a>
+                <div id="menu-toggle"><button aria-label="Toggle menu" id="toggle-button"><i class="fa-solid fa-bars"></i></button></div>
+            </div>
+            <div id="menu" class="menu-list">
+                <ul>
+                    <li><a href="#">Stories</a></li>
+                    <li><a href="#">Authors</a></li>
+                    <li><a href="#">Sources</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                    <li  id="home-search">
+                        <form action="#" method="get">
+                            <!--<a target="_blank" href="https://icons8.com/icon/W0xu6u7K9A0F/search">Search</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
+                            <input type="search" name="search" placeholder="Search">
+                            <button type="submit">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
-    <main></main>
-    <footer></footer>
+    <main>
+        <div id="story-1-cover" class="media-cover article-title">
+            <!--https://www.wallpaperflare.com/search?wallpaper=travel-->
+            <h1>The Soul Of Siberia Hidden Beneath The Waters</h1>
+            <div class="article-engagement">
+                <div><i class="fa-regular fa-comment"></i>&nbsp;&nbsp;356</div>
+                <div><i class="fa-regular fa-heart"></i>&nbsp;&nbsp;200</div>
+            </div>
+        </div>
+        <div class="grid story content">
+            <article>
+                <h2>Wildlife</h2>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique maxime nemo at dignissimos, ex natus recusandae est nisi voluptatum, sint quia autem ut magni consequatur voluptas? Eligendi, autem? Eaque impedit illum excepturi magni dignissimos esse enim ullam natus sapiente explicabo consequuntur, ipsum quia, aliquam aut sint commodi officiis ducimus omnis hic maxime voluptatum provident veritatis. In illo tenetur facilis ex repellat quidem ullam hic nam aut earum excepturi rem, est praesentium placeat eligendi, amet minima, officia explicabo eum assumenda eaque! Dolore fugiat distinctio unde aspernatur magnam voluptatem ipsam officia quasi animi expedita, neque facilis corrupti repellat vel ut vero tempora.
+                </p>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique maxime nemo at dignissimos, ex natus recusandae est nisi voluptatum, sint quia autem ut magni consequatur voluptas? Eligendi, autem? Eaque impedit illum excepturi magni dignissimos esse enim ullam natus sapiente explicabo consequuntur, ipsum quia, aliquam aut sint commodi officiis ducimus omnis hic maxime voluptatum provident veritatis. In illo tenetur facilis ex repellat quidem ullam hic nam aut earum excepturi rem, est praesentium placeat eligendi, amet minima, officia explicabo eum assumenda eaque! Dolore fugiat distinctio unde aspernatur magnam voluptatem ipsam officia quasi animi expedita, neque facilis corrupti repellat vel ut vero tempora.
+                </p>
+                <img src="../../assets/imgs/gallery/img1.png" alt="Article image"/>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique maxime nemo at dignissimos, ex natus recusandae est nisi voluptatum, sint quia autem ut magni consequatur voluptas? Eligendi, autem? Eaque impedit illum excepturi magni dignissimos esse enim ullam natus sapiente explicabo consequuntur, ipsum quia, aliquam aut sint commodi officiis ducimus omnis hic maxime voluptatum provident veritatis. In illo tenetur facilis ex repellat quidem ullam hic nam aut earum excepturi rem, est praesentium placeat eligendi, amet minima, officia explicabo eum assumenda eaque! Dolore fugiat distinctio unde aspernatur magnam voluptatem ipsam officia quasi animi expedita, neque facilis corrupti repellat vel ut vero tempora.
+                </p>
+                <div class="article-footer">
+                    <a href="#">Winter</a>
+                    <a href="#">Siberia</a>
+                    <a href="#">Europe</a>
+                </div>
+                <div class="article-footer">
+                    <a href="#" class="share-option">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        Whatsapp
+                    </a>
+                    <a href="#" class="share-option">
+                        <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+                        Facebook
+                    </a>
+                </div>
+            </article>
+            <aside>
+                <div class="story-author-profile">
+                    <div class="author-photo">
+                        <img src="../../assets/imgs/logo.png" alt="Author photo">
+                    </div>
+                    <h3>Hanbee Choi</h3>
+                    <p>Writer in National</p>
+                    <div class="author-social-media">
+                        <a href="#" class="social-media-link">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        <a href="#" class="social-media-link">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-media-link">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="view-profile">View Author Profile</a>
+            </aside>
+        </div>
+    </main>
+    <footer>
+        <div class="content">
+            <div class="newsletter-subscription">
+                <div id="title">
+                    <h3>Subscribe to our newsletter!</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <form action="#" method="get">
+                    <input type="text" placeholder="Your e-mail">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <hr>
+            <div class="footer-wrapper">
+                <div class="footer-menu-wrapper">
+                    <div id="footer-logo-wrapper">
+                        <img src="../../assets/imgs/logo.png" alt="Odyssey Logo" id="footer-logo">                        
+                    </div>
+                    <ul id="footer-menu">
+                        <li><a href="#">Stories</a></li>
+                        <li><a href="#">Authors</a></li>
+                        <li><a href="#">Sources</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+                <ul id="footer-socials">
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-reddit"></i></a></li>
+                </ul>
+            </div>
+            <small>Vin & Bee Inc. &copy; 2024</small>
+        </div>
+    </footer>
 </body>
 </html>
