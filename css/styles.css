@@ -284,7 +284,7 @@ aside .section-title{
     font-size: 2rem;
 }
 .article-card-wrapper{
-    padding: 0 1rem;
+    padding: 0 2rem;
     display: flex;
     flex-direction: column;
     height: 44%;
@@ -719,6 +719,11 @@ small{
         grid-template-rows: 30rem 1fr 1fr;
         grid-auto-rows: auto;
         place-content: center;
+    }
+
+    .home-articles .article-card-wrapper p {
+        overflow: hidden;
+        margin-top: 5rem;
     }
     .article-thumbnail{
         min-width: 100%;
