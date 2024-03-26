@@ -14,18 +14,28 @@ html, body{
     --primaryColor: #08254F;
     --secondaryColor: #04132A;
     --accentColor: #0079FD;
+    --subtleColor: #D9D9D9;
+}
+h1,h2,h3,button, .view-profile, .author-profile p{
+    font-family: Montserrat, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 h1,h2,h3{
-    font-family: Montserrat, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 600;
     color: var(--headerColor);
 }
 button{
-    font-family: Montserrat, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 400;
 }
 header, main, footer{
     width: 100vw;
+}
+.visually-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }
 .grid{
     display: grid;
@@ -35,7 +45,7 @@ header, main, footer{
     margin: auto;
 }
 main .content{
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
 }
 nav ul,
 footer ul{
@@ -67,11 +77,11 @@ header nav{
 header nav, header nav ul{
     display: flex;
     flex-direction: column;
-    background-color: transparent;
+    background-color: rgba(4, 19, 42, 0.95);
 }
 #menu ul{
     z-index: 2;
-    background-color: rgba(0,0,0,0.35);
+    background-color: rgba(4, 19, 42, 0.95)
 }
 #menu ul li{
     order:2;
@@ -175,15 +185,14 @@ header nav, header nav ul{
 /* HOME - MAIN */
 .media-cover{
     width: 100%;
-    text-align: center;
     overflow: hidden;
     height: 40vh;
     position: relative;
 }
-.media-cover .media-text{
+.media-cover .media-text, .media-cover .article-title-wrapper{
     position: absolute;
     height: 100%;
-    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 68%);
+    background: linear-gradient(0deg, rgba(0,0,0,0) 10%, rgba(0,0,0,0.75) 100%);
     left: 0;
     right: 0;
     display: flex;
@@ -191,13 +200,17 @@ header nav, header nav ul{
     color: var(--white);
     place-content: center;
     padding: 10% 5%;
+}
+#gallery .media-text h1{
+    font-size: 3.5rem;
+    max-width: 400px;
     text-align: left;
 }
 .media-cover .media-text h1{
-    font-size: 3.5rem;
-    max-width: 400px;
-    margin: 0;
+    font-size: 3rem;
     color: var(--white);
+    margin: 0;
+    max-width: 700px;
 }
 .media-cover .media-text p{
     font-size: 1.2rem;
@@ -221,19 +234,26 @@ height: 100%;
     gap: 1.2rem;
     max-width: 90vw;
 }
-.home-articles article a{
+.article-card-link{
     text-decoration: none;
     color: black;
+}
+.home-articles article .article-card-link{
     min-height: fit-content;
     height: 100%;
     display: flex;
 }
-.home-articles .main-article a{
+.home-articles .main-article .article-card-link{
     flex-direction: column;
 }
 .home-articles .article-card-wrapper{
     height: 44%;
     min-height: 233px;
+    overflow: hidden;
+}
+.home-articles .article-card-wrapper p{
+    overflow: hidden;
+    margin: 0;
 }
 .articles{
     width: 100%;
@@ -267,8 +287,15 @@ aside .section-title{
     padding: 0 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     height: 44%;
+    position: relative;
+}
+.box-overflow-gradient{
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    bottom:0;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 83%);
 }
 
 .main-article p{
@@ -309,6 +336,44 @@ aside section .article-card-wrapper{
     width: 100%;
     max-width: 350px;
 }
+
+.most-read-article{
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+.most-read-article img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.most-read-article .card-content{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    padding: 1rem 0.5rem 0 0.5rem;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,0.50);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.most-read-article .card-content *{
+    color: var(--white);
+}
+.article-ranking *{
+    display: block;
+}
+.article-ranking{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.article-ranking .ranking-position{
+    font-size: 2rem;
+}
 .read-more{
     font-size: 1.2rem;
     text-decoration: underline;
@@ -318,6 +383,9 @@ aside section .article-card-wrapper{
     display: block;
     width: 100%;
 }
+.article-card-link .read-more{
+    height: auto;
+}
 .content-wrapper{
     display: flex;
     overflow-y: hidden;
@@ -325,28 +393,42 @@ aside section .article-card-wrapper{
     flex-wrap: nowrap;
     height: fit-content;
 }
-/*Story*/
-.article-title *{
+/*STORY*/
+.article-title-wrapper *{
     color: white;
 }
-.article-title{
+.article-title-wrapper{
     position: relative;
     z-index: 0;
 }
-.article-title h1{
+.article-title-wrapper .media-text{
     position: absolute;
-    bottom: 10%;
-    width: 100%;
+    left: 0;
+    right: 0;
     text-align: center;
     z-index: 3;
     text-shadow: 5px 5px 20px black;
+}
+.article-title-wrapper #article-title{
+    margin: 0 auto;
+    position: relative;
+    bottom: -5rem;
+}
+.article-title-wrapper .article-engagement{
+    width: 100%;
+    margin: 2rem 0;
+    position: relative;
+    bottom: -4rem;
 }
 .story{
     margin-bottom: 5vh;
 }
 .story article{
     margin-top: 5vh;
-    width: 90vw;
+    max-width: 85vw;
+}
+.story article figure{
+    margin: 0;
 }
 .story article img{
     width: 100%;
@@ -356,7 +438,6 @@ aside section .article-card-wrapper{
 }
 .story article .article-footer{
     display: flex;
-    min-width: fit-content;
     margin-top: 2vh;
 }
 .story article .article-footer a{
@@ -365,43 +446,45 @@ aside section .article-card-wrapper{
     font-size: 0.9rem;
     letter-spacing: 1px;
     padding: 0.5rem;
-    width: 100px;
+    min-width: 100px;
     border-radius: 50px;
     text-align: center;
-    color: lightgray;
+    color: gray;
     margin-right: 1vw;
     border: thin solid lightgray;
+    font-family: Montserrat, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .story article .article-footer .share-option{
     color: white;
-    background-color: gray;
-    border-color: gray;
+    background-color: var(--accentColor);
+    border: none;
 }
 .author-profile-wrapper{
     max-width: 350px;
-    width: 90%;
-    margin: 1rem 0.5rem 1rem auto;
     border: thin solid lightgray;
     border-radius: 10px;
     height: min-content;
     text-align: center;
     flex: 0 0 auto;
+    overflow: hidden;
+    margin: 1rem 1rem 1rem 0;
+}
+.story aside{
+    margin-top: 0;
 }
 .story aside .author-profile-wrapper{
-    margin-top: 10vh;
-    width: 90%;
+    max-width: 250px;
+    margin: 5vh auto;
 }
-.article-title{
+.article-title-wrapper{
     display: flex;
     flex-direction: column;
     place-content: flex-end;
-    padding-bottom: 10%;
+    height: 60vh;
 }
-#story-1-cover{
-    background-image: url("https://media.istockphoto.com/id/1219033315/photo/landscape-of-shamanka-rock-and-milky-way-on-sky-with-natural-breaking-ice-in-frozen-water-on.jpg?s=612x612&w=0&k=20&c=pJ3iZq9p9L7t8-kwkaVHWAnFXuhVTmaw5dKaeFMDgBo=");
-    background-size: cover;
-    background-position: bottom -30%;
-    background-repeat: no-repeat;
+.article-title-wrapper img{
+    height: 100%;
+    object-fit: cover;
 }
 .author-profile{
     padding: 1rem 0.5rem;
@@ -409,12 +492,13 @@ aside section .article-card-wrapper{
 }
 .author-profile h3{
     font-size: 1.5rem;
-    margin-bottom: 0;
+    margin:initial;
     border: none;
 }
 .author-profile p{
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-top: 0.5rem;
+    color: gray;
 }
 .author-profile .author-photo{
     width: 85%;
@@ -423,14 +507,12 @@ aside section .article-card-wrapper{
 }
 .author-profile .author-photo img{
     width: 100%;
+    max-width: 150px;
     height: 100%;
+    aspect-ratio: 1;
     border-radius: 50%;
+    object-fit: cover;
     border: thin solid lightgray;
-}
-.author-profile-wrapper a{
-    text-decoration: none;
-    font-weight: lighter;
-    color: black;
 }
 .author-profile .author-social-media{
     display: flex;
@@ -438,10 +520,16 @@ aside section .article-card-wrapper{
     font-size: 1.5rem;
     margin: 4rem 0 1rem 0;
 }
+.author-profile .author-social-media a{
+    color: var(--accentColor);
+}
 .author-profile-wrapper .view-profile{
+    text-decoration: none;
     display: block;
     padding: 1rem;
-    border-top: thin solid lightgray;
+    font-weight: 600;
+    background-color: rgba(0, 121, 253, 0.2);
+    color: var(--primaryColor);
 }
 /*footer*/
 footer {
@@ -452,9 +540,7 @@ footer {
 footer *{
     color: white;
 }
-footer h3{
-    text-align: center;
-}
+
 .footer-wrapper{
     display: flex;
     flex-direction: column;
@@ -482,8 +568,12 @@ footer form button{
     min-height: 40px;
     border: none;
     color: white;
-    background-color: var(--accentColor);
+    background-color: var(--secondaryColor);
     text-transform: uppercase;
+}
+footer form button:hover{
+    background-color: var(--accentColor);
+    cursor:pointer;
 }
 .newsletter-subscription{
     display: grid;
@@ -493,18 +583,23 @@ footer form button{
     align-items: center;
     justify-items: center;
 }
-.newsletter-subscription #title{
+.newsletter-subscription div{
     width: 100%;
 }
-.newsletter-subscription #title *{
+.newsletter-subscription div *{
     text-align: center;
     color: whitesmoke;
 }
-.newsletter-subscription #title h3{
-    font-size: 1.6rem;
+
+.newsletter-subscription div h3{
+    font-family: "GFS Didot", 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 400;
 }
-.newsletter-subscription #title p{
-    font-size: 1.2rem;
+.newsletter-subscription div p{
+    font-size: 1.1rem;
+    font-weight: 100;
 }
 #footer-logo-wrapper{
     width: 100%;
@@ -529,11 +624,12 @@ footer form button{
     justify-content: space-evenly;
     font-size: 1.5rem;
     text-align: center;
+    max-width: 300px;
 }
 .newsletter-subscription,
 .footer-menu-wrapper,
 #footer-socials{
-    margin: 4vh 0;
+    margin: 4vh auto;
     box-sizing: border-box;
 }
 small{
@@ -574,6 +670,9 @@ small{
 }
 /*Tablet*/
 @media only screen and (min-width: 800px){
+    #menu ul, nav, header nav, header nav ul        {
+        background-color: transparent;
+    }
     #logo-wrapper{
         max-width: 150px;
     }
@@ -615,21 +714,11 @@ small{
     .media-cover .media-text{
         padding: 0 10%;
     }
-    main .content{
-        grid-template-columns: 2fr 1fr;
-        gap: 1rem;
-    }
     .home-articles{
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: 30rem 1fr 1fr;
         grid-auto-rows: auto;
         place-content: center;
-    }
-    aside {
-        justify-content: flex-start;
-    }
-    .aside-content{
-        height: 30rem;
     }
     .article-thumbnail{
         min-width: 100%;
@@ -639,50 +728,40 @@ small{
         width: 100%;
         grid-column: 1/-1;
     }
-    .home-articles article a{
+    .home-articles article .article-card-link{
         flex-direction: column;
         align-items: stretch;
         margin: 0;
     }
-    .home-articles .main-article a{
+    .home-articles .main-article .article-card-link{
         flex-direction: row;
         width: 100%;
         height: 100%;
     }
-    .main-article a .article-thumbnail{
+    .main-article .article-card-link .article-thumbnail{
         min-width:50%;
         width: 50%;
         height: 100%;
         position:relative;
     }
-    aside article{
-        margin: 0.5rem 0;
-        height: 100%;
-    }
-    .content-wrapper{
-        flex-direction: column;
-        
-        padding-top: 1vh;
-        overflow-x: hidden;
-    }
-    .most-read-section .content-wrapper{
-        height: 29rem;
-    }
-    aside section .article-card-wrapper {
-        max-width: 99%;
-        margin: 0 0 0.8rem 0;
-        padding: 0;
-        height:100%;
-        max-height: 140px;
+    .author-profile-wrapper{
+        width: 90%;
     }
     /*Story*/
+    .story{
+        grid-template-columns: 250px 1fr !important;
+        gap: 2rem;
+    }
     .story article{
-        width: 65vw;
+        max-width: 800px;
         grid-column: 2/-1;
     }
     .story aside{
         grid-column: 1/2;
         grid-row: 1/-1;
+    }
+    .story aside .author-profile-wrapper{
+        margin-top: 10vh;
     }
     /*Footer*/
     .newsletter-subscription{
@@ -706,17 +785,51 @@ small{
 }
 /*Desktop*/
 @media only screen and (min-width: 1000px){
-    main .content{
+    .home{
         grid-template-columns: 3fr 1fr;
+        gap: 2rem;
     }
     .home-articles{
         grid-template-columns: repeat(3,1fr);
+    }
+    aside article{
+        margin: 0.5rem 0;
+        height: 100%;
+    }
+    .most-read-article{
+        height: 140px;
+    }
+    .content-wrapper{
+        flex-direction: column;
+        padding-top: 1vh;
+        overflow-x: hidden;
+    }
+    .most-read-section .content-wrapper{
+        height: 29rem;
+    }
+    aside section .article-card-wrapper {
+        max-width: 99%;
+        margin: 0 0 0.8rem 0;
+        padding: 0;
+        height:100%;
+        max-height: 140px;
+    }
+    aside {
+        justify-content: flex-start;
+    }
+    .aside-content{
+        height: 30rem;
+    }
+    .author-profile-wrapper{
+        margin: 1rem auto;
+        min-width: 90%;
     }
     .home-articles article,
     aside article,
     .aside-profile{
         max-width: 100%;
     }
+
     .footer-menu-wrapper{
         width: 100%;
     }
@@ -724,10 +837,6 @@ small{
         text-align: center;
         width: 40%;
         padding:1rem;
-    }
-    #footer-logo{
-        position:relative;
-        top:-100%;
     }
     #footer-menu{
         grid-template-columns: repeat(5,1fr);
