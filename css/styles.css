@@ -52,7 +52,6 @@ header, main, footer{
 }
 .content{
     width: 90vw;
-    min-height: 100vh;
     margin: auto;
 }
 main .content{
@@ -143,8 +142,8 @@ header nav, header nav ul{
     overflow: hidden;
     width: 40px;
     position: absolute;
-    top:35%;
-    right: 5%;
+    top:8%;
+    right: 3%;
     padding: 0;
     margin: 0;
     border: 1px solid transparent;
@@ -545,16 +544,27 @@ aside section .article-card-wrapper{
 /*------------- CONTACT -------------*/
 #contact-page{
     text-align: center;
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url("../assets/svg/waves-background.svg");
+    background-position: bottom;
+    background-repeat: no-repeat;
 }
 #contact-page #contact{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-}
-#contact {
-    box-shadow: 5px 15px 15px 1px lightgray;
     min-height: 600px;
     max-width: 900px;
-    margin: auto;
+    margin: 5vh auto;
+    background-color: white;
+}
+#contact-page h1{
+    font-size: 1.5rem;
+}
+#contact-page p{
+    font-size: 1.3rem;
+    max-width: 90vw;
+    margin: 2rem auto;
 }
 #contact form *, #contact #contact-info{
     text-align: left;
@@ -577,31 +587,42 @@ aside section .article-card-wrapper{
     padding:10px;
 }
 #contact form{
-    padding: 1rem 5rem;
+    margin: 1vh 0;
+    padding: 1rem 2rem 1rem 1rem;
+    max-width: 95vw;
 }
 #contact form label{
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 #contact form input, textarea{
     color: gray;
-    border-radius: 5px;
-    border: 1px solid var(--subtleColor);
     outline: none;
+    border-color: var(--subtleColor);
+    border-style: solid;
 }
 textarea{
+    border-radius: 5px;
     width: 100%;
     height: 30%;
-    min-height: 100px;
+    min-height: 200px;
+    border-width: 1px;
+    resize: none;
 }
 #contact form input{
     min-height: 35px;
+    border: none;
+    border-bottom: 2px solid lightgrey;
+}
+#contact form input:focus{
+    border-width: 3px;
+    border-color: var(--accentColor);
 }
 #contact form .form-row{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    grid-auto-flow: column;
+    gap: 2rem;
 }
 
 #contact form .form-group{
@@ -610,7 +631,10 @@ textarea{
     margin-bottom: 1rem;
 
 }
-
+#button-wrapper{
+    width: 100%;
+    text-align: right !important;
+}
 #contact form button{
     width: 100%;
     text-align: center;
@@ -623,6 +647,9 @@ footer {
     display: flex;
     flex-direction: column;
     background-color: var(--primaryColor);
+}
+footer .content{
+    min-height: auto;
 }
 footer *{
     color: white;
@@ -670,7 +697,6 @@ footer form button{
 
 .newsletter-subscription div h3{
     font-family: "GFS Didot", 'Times New Roman', Times, serif;
-    text-align: center;
     font-size: 2rem;
     font-weight: 400;
 }
@@ -731,6 +757,15 @@ small{
     main .content{
         overflow: hidden;
     }
+    /*CONTACT*/
+    #contact form{
+        padding: 1rem 5rem;
+    }
+    #contact form button{
+        width: 150px;
+        text-align: center;
+    }
+    /*FOOTER*/
     footer form{
         flex-direction: row;
         justify-content: center;
@@ -779,7 +814,7 @@ small{
         justify-content: flex-end;
     }
     #menu ul #home-search form button {
-        top:38%;
+        top:8%;
         right: 8%;
     }
     #menu ul #home-search{
@@ -847,8 +882,9 @@ small{
     }
     /*Contact*/
     #contact-page #contact{
-        grid-template-columns: 1fr 3fr;
+        grid-template-columns: 1fr 2fr;
         grid-template-rows: 1fr;
+        box-shadow: 1px 1px 10px 2px var(--subtleColor);;
     }
     #contact-page #contact-info{
         grid-row: 1/-1;
@@ -858,7 +894,8 @@ small{
     .newsletter-subscription{
         grid-template-columns: 1fr 1fr;
     }
-    .newsletter-subscription #title *{
+
+    .newsletter-subscription div *{
         text-align: left;
     }
     .footer-wrapper{
