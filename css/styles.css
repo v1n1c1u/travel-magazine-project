@@ -89,10 +89,12 @@ header nav, header nav ul{
     flex-direction: column;
     background-color: rgba(4, 19, 42, 0.95);
 }
+
 #menu ul{
     z-index: 2;
     background-color: rgba(4, 19, 42, 0.95)
 }
+
 #menu ul li{
     order:2;
     display: flex;
@@ -102,7 +104,8 @@ header nav, header nav ul{
 #menu ul li form{
     padding: 1rem;
 }
-#menu ul li a{
+
+.menu-list ul li a{
     text-align: center;
     font-weight: lighter;
     letter-spacing: 1.2px;
@@ -111,6 +114,7 @@ header nav, header nav ul{
     min-width: 85px;
     box-sizing: border-box;
 }
+
 #menu ul li a:hover{
     color:white;
 }
@@ -188,6 +192,17 @@ header nav, header nav ul{
     padding: 0.5rem 1rem;
     height: 100%;
 }
+
+#toggle-button-black i{
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    color: var(--secondaryColor);
+    border: none;
+    background-color: inherit;
+    padding: 0.5rem 1rem;
+    height: 100%;
+}
+
 #menu-toggle button:hover{
     cursor: pointer;
 }
@@ -542,6 +557,17 @@ aside section .article-card-wrapper{
     color: var(--primaryColor);
 }
 /*------------- CONTACT -------------*/
+
+.menu-list-black{
+    display: none;
+}
+
+header .nav-black, header .nav-black ul{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
 #contact-page{
     text-align: center;
     width: 100vw;
@@ -549,6 +575,7 @@ aside section .article-card-wrapper{
     background-image: url("../assets/svg/waves-background.svg");
     background-position: bottom;
     background-repeat: no-repeat;
+    margin: 9rem 0rem;
 }
 #contact-page #contact{
     grid-template-columns: 1fr;
@@ -765,6 +792,7 @@ small{
         width: 150px;
         text-align: center;
     }
+
     /*FOOTER*/
     footer form{
         flex-direction: row;
@@ -780,9 +808,10 @@ small{
         margin-bottom: 0;
     }
 }
+
 /*Tablet*/
 @media only screen and (min-width: 800px){
-    #menu ul, nav, header nav, header nav ul        {
+    #menu ul, nav, header nav, header nav ul{
         background-color: transparent;
     }
     #logo-wrapper{
@@ -881,6 +910,20 @@ small{
         margin-top: 10vh;
     }
     /*Contact*/
+    .menu-list-black{
+        display: block;
+    }
+
+    .menu-list-black ul li a {
+        color: var(--secondaryColor);
+    }
+
+    header .nav-black,
+    header .nav-black ul{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     #contact-page #contact{
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 1fr;
