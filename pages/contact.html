@@ -12,41 +12,44 @@
 
 <body>
     <header>
-            <nav class="nav-black">
-                <div id="logo-wrapper">
-                    <a href="">
-                        <img src="../assets/imgs/logo_black.png" alt="Odyssey Logo Black"  id="logo-img">
-                    </a>
-                    <div id="menu-toggle" class="toggle-black"><button aria-label="Toggle menu" id="toggle-button-black"><i class="fa-solid fa-bars"></i></button></div>
+        <nav class="nav-black">
+            <div id="logo-wrapper">
+                <a href="../index.html">
+                    <img src="../assets/imgs/logo_black.png" alt="Odyssey Logo Black"  id="logo-img">
+                </a>
+                <div id="menu-toggle" class="toggle-black">
+                    <button aria-label="Toggle menu" id="toggle-button">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
                 </div>
+            </div>
 
-                <div id="menu" class="menu-list-black">
-                    <ul>
-                        <li><a href="#">Stories</a></li>
-                        <li><a href="#">Authors</a></li>
-                        <li><a href="">Sources</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="#">About</a></li>
-                        <li  id="home-search">
-                            <form action="#" method="get">
-                                <!--<a target="_blank" href="https://icons8.com/icon/W0xu6u7K9A0F/search">Search</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
-                                <input type="search" name="search" placeholder="Search">
-                                <button type="submit">Search</button>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-
-
+            <div id="menu" class="menu-list menu-list-black">
+                <ul>
+                    <li><a href="../pages/stories.html">Stories</a></li>
+                    <li><a href="../pages/authors.html">Authors</a></li>
+                    <li><a href="../pages/sources.html">Sources</a></li>
+                    <li><a href="../pages/contact.html" class="active">Contact</a></li>
+                    <li><a href="../pages/about.html">About</a></li>
+                    <li id="searchField">
+                        <form action="#" method="get">
+                            <input type="search" name="search" placeholder="Search">
+                            <button type="submit"  class="dark">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <main>
         <div id="contact-page" class="content centralized">
-            <h1>Get in touch!</h1>
-            <div class="underline-wrapper">
-                <img src="../assets/svg/underline-wave.svg" alt="Wave">
+            <div class="page-title">
+                <h1>Get in touch!</h1>
+                <div class="underline-wrapper">
+                    <img src="../assets/svg/underline-wave.svg" alt="Wave">
+                </div>
+                <p>Any question or remarks? Just write us a message</p>
             </div>
-            <p>Any question or remarks? Just write us a message</p>
             <div id="contact" class="grid">
                 <div id="contact-info">
                     <h3>Contact information</h3>
