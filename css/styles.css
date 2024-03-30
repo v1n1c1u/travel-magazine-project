@@ -15,13 +15,21 @@ html, body{
     --secondaryColor: #04132A;
     --accentColor: #0079FD;
     --subtleColor: #D9D9D9;
+    --h1FontSize: 3rem;
+    --h2FontSize: 1.2rem;
 }
-h1,h2,h3,button, .view-profile, .author-profile p, label{
+h1,h2,h3,h4,button, .view-profile, .author-profile p, label{
     font-family: Montserrat, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 h1,h2,h3{
     font-weight: 600;
     color: var(--headerColor);
+}
+h1{
+    font-size: var(--h1FontSize);
+}
+h2{
+    font-size: var(--h2FontSize);
 }
 button{
     font-weight: 400;
@@ -47,8 +55,12 @@ header, main, footer{
     white-space: nowrap;
     width: 1px;
 }
-.menu-list-black .active{
-    color: var(--accentColor) !important;
+.active{
+    color: white !important;
+    background-color: var(--accentColor);
+}
+.active:hover{
+    background-color: var(--accentColor) !important;
 }
 .grid{
     display: grid;
@@ -100,7 +112,7 @@ ul li a{
     margin-bottom: 4rem;
 }
 .page-title h1{
-    font-size: 3rem;
+    font-size: var(--h1FontSize);
 }
 /*Header*/
 header{
@@ -110,16 +122,15 @@ header{
     left: 0;
     z-index: 2;
     font-family: sans-serif;
-    /*
-    background: transparent;
-    filter: blur(10px);
-    -webkit-filter: blur(10px);
-    height: 5%;
-    */
+    background-color: white;
+}
+.dark-header{
+    background-color: rgba(8, 37, 79, 0.8);
 }
 header nav{
+    box-sizing: border-box;
     max-height: 150px;
-    border-bottom: 3px solid white;
+    border-bottom: 5px solid var(--accentColor);
 }
 .nav-black{
     border-color: var(--accentColor);
@@ -127,18 +138,17 @@ header nav{
 header nav, header nav ul{
     display: flex;
     flex-direction: column;
-    /*background-color: rgba(4, 19, 42, 0.95);*/
 }
 
 #menu ul{
     z-index: 2;
-    background-color: rgba(4, 19, 42, 0.95)
 }
-
 #menu ul li{
+    border-radius: 10px 10px 0 0;
     order:2;
     display: flex;
     align-items: center;
+    border-top: 2px solid white;
 }
 #menu ul li a,
 #menu ul li form{
@@ -150,15 +160,16 @@ header nav, header nav ul{
     font-weight: lighter;
     letter-spacing: 1.2px;
     width: 100%;
+    height: 100%;
     min-width: 85px;
     box-sizing: border-box;
-}
-.nav-black .menu-list ul li a{
     color: var(--primaryColor);
+    display: flex;
+    place-items: center;
 }
 
 #menu ul li a:hover{
-    color:var(--accentColor);
+    background-color:var(--subtleColor);
 }
 #menu ul #searchField{
     order:1;
@@ -169,8 +180,10 @@ header nav, header nav ul{
     text-align: right;
     margin-right: 1rem;
 }
-#menu ul #searchField input{
-    border: 2px solid white;
+.menu-list ul #searchField input{
+    outline-color: var(--accentColor);
+    color: var(--primaryColor);
+    border: 2px solid var(--subtleColor);
     background-color: transparent;
     border-radius: 50px;
     margin: auto;
@@ -178,6 +191,16 @@ header nav, header nav ul{
     padding: 0 1em;
     width: 100%;
     max-width: 350px;
+}
+.menu-list ul #searchField input::-ms-clear {
+    display: none;
+}
+.menu-list ul #searchField input:focus{
+    background-color: white;
+    border-color: var(--primaryColor);
+}
+.show-menu ul li #searchField input{
+    color: white !important;
 }
 .nav-black .menu-list ul #searchField input{
     border-color: var(--subtleColor) !important;
@@ -193,19 +216,19 @@ header nav, header nav ul{
     overflow: hidden;
     width: 40px;
     position: absolute;
-    top:8%;
-    right: 3%;
+    top:1rem;
+    right: 1rem;
     padding: 0;
     margin: 0;
     border: 1px solid transparent;
     border-radius: inherit;
-    background: url("../assets/svg/icons8-search-16.svg") bottom center;
+    background: url("../assets/svg/icons8-search-16.svg") center;
     background-repeat: no-repeat;
     cursor: pointer;
     opacity: 0.7;
 }
 #menu ul #searchField form .dark{
-    background: url("../assets/svg/icons8-search-16-dark.svg") bottom center;
+    background: url("../assets/svg/icons8-search-16-dark.svg") center;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -230,18 +253,20 @@ header nav, header nav ul{
 }
 .show-menu{
     display: block;
+    background-color: var(--primaryColor);
+}
+.show-menu ul li a{
+    color: white;
 }
 #menu-toggle{
     text-align: right;
     width: 100%;
 }
-.toggle-black button i{
-    color: var(--accentColor);
-}
+
 #menu-toggle button{
     font-size: 1.5rem;
     margin: 0 1rem;
-    color: white;
+    color: var(--accentColor);
     border: none;
     background-color: inherit;
     padding: 0.5rem 1rem;
@@ -257,8 +282,14 @@ header nav, header nav ul{
 .media-cover{
     width: 100%;
     overflow: hidden;
+    min-height: 400px;
     height: 40vh;
     position: relative;
+}
+.media-cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .media-cover .media-text, .media-cover .article-title-wrapper{
     position: absolute;
@@ -278,7 +309,6 @@ header nav, header nav ul{
     text-align: left;
 }
 .media-cover .media-text h1{
-    font-size: 3rem;
     color: var(--white);
     margin: 0;
     max-width: 700px;
@@ -309,6 +339,18 @@ height: 100%;
     text-decoration: none;
     color: black;
 }
+.home-articles article .article-card-link:hover .article-thumbnail img,
+#home aside .most-read-section article .article-card-link:hover .most-read-article img,
+#sources-page #gallery-grid .grid-item:hover img {
+    animation: zoom 0.2s linear both;
+}
+@keyframes zoom{
+    from{
+        transform: scale(1);
+    }to{
+        transform: scale(1.1);
+    }
+}
 .home-articles article .article-card-link{
     min-height: fit-content;
     height: 100%;
@@ -323,6 +365,7 @@ height: 100%;
     overflow: hidden;
 }
 .home-articles .article-card-wrapper p{
+    max-height: 250px;
     overflow: hidden;
     margin: 0;
     text-align: justify;
@@ -333,13 +376,15 @@ height: 100%;
 .section-title{
     max-width: 200px;
     font-size: 2rem;
-    border-bottom: 2px solid var(--primaryColor);
+    border-bottom: 4px solid var(--accentColor);
 }
 aside .section-title{
     font-size: 1.5rem;
 }
 .article-thumbnail{
-    width: 35%;
+    overflow: hidden;
+    width: 100%;
+    min-width: 120px;
     aspect-ratio: 1/1;
 }
 .article-thumbnail img{
@@ -443,14 +488,16 @@ aside section .article-card-wrapper{
 .article-ranking .ranking-position{
     font-size: 2rem;
 }
-.read-more{
+.read-more, .read-more *{
     font-size: 1.2rem;
+    color: var(--primaryColor);
     text-decoration: underline;
     font-family: "EB Garamond", Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
     text-align: right;
     display: block;
-    width: 100%;
+    width: 95%;
+    margin: auto;
 }
 .article-card-link .read-more{
     height: auto;
@@ -472,6 +519,7 @@ aside section .article-card-wrapper{
 }
 .article-title-wrapper .media-text{
     position: absolute;
+    padding: 0 10%;
     left: 0;
     right: 0;
     text-align: center;
@@ -546,13 +594,13 @@ aside section .article-card-wrapper{
     max-width: 250px;
     margin: 5vh auto;
 }
-.article-title-wrapper{
+.story .article-title-wrapper{
     display: flex;
     flex-direction: column;
     place-content: flex-end;
     height: 60vh;
 }
-.article-title-wrapper img{
+.story .article-title-wrapper img{
     height: 100%;
     object-fit: cover;
 }
@@ -560,12 +608,12 @@ aside section .article-card-wrapper{
     padding: 1rem 0.5rem;
     max-height: 600px;
 }
-.author-profile h3{
+.story .author-profile h3, .author-profile h4{
     font-size: 1.5rem;
     margin:initial;
     border: none;
 }
-.author-profile p{
+.story .author-profile p{
     font-size: 1rem;
     margin-top: 0.5rem;
     color: gray;
@@ -696,7 +744,6 @@ textarea{
 /*------------- SOURCES -------------*/
 #sources-page section{
     max-width: 90vw;
-    width: 100%;
     margin: auto;
     padding: 0 1rem;
 }
@@ -710,11 +757,13 @@ textarea{
 }
 #sources-page #gallery-grid .grid-item{
     position: relative;
+    aspect-ratio: 1/1;
 }
 #sources-page #gallery-grid .grid-item figure{
     width: 100%;
     height: 100%;
     margin: 0;
+    overflow: hidden;
 }
 #sources-page #gallery-grid .grid-item figure figcaption{
     color: white;
@@ -745,7 +794,6 @@ textarea{
     height: fit-content;
     min-height: 100px;
     border-bottom: thin solid var(--subtleColor);
-    padding: 10px 0;
 }
 .vertical-list .list-item:hover{
     background-color: rgba(211, 211, 211, 0.236);
@@ -763,17 +811,27 @@ textarea{
 }
 .vertical-list .title{
     width: 100%;
-    font-size: 1.5rem;
-    font-weight: 600;
+    flex-direction: column;
     justify-content: start;
     padding: 0 10px;
+}
+.vertical-list .title h2{
+    width: 100%;
     text-align: left;
 }
-#sources-page #sources-list .link{
+.vertical-list .list-item .thumbnail{
+    display:none;
+}
+.vertical-list .list-item .thumbnail img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.vertical-list .list-item .link{
     min-width: 25px;
     text-align: center;
 }
-#sources-page #sources-list .link a{
+.vertical-list .list-item .link a{
     display: flex;
     align-items: center;
     justify-items: center;
@@ -781,7 +839,6 @@ textarea{
 }
 /*------------- AUTHORS -------------*/
 #authors-page .grid, #about-page p{
-    width: 90vw;
     max-width: 800px;
     margin: auto;
 }
@@ -909,6 +966,12 @@ small{
     main .content{
         overflow: hidden;
     }
+    /*
+    .centralized{
+        max-width: 950px;
+        width: 90vw;
+    }
+    */
     /*CONTACT*/
     #contact form{
         padding: 1rem 5rem;
@@ -943,6 +1006,16 @@ small{
     #menu ul, nav, header nav, header nav ul{
         background-color: transparent;
     }
+    #menu ul li{
+        border-radius: 10px 10px 0 0;
+        overflow: hidden;
+    }
+    .show-menu{
+        background-color: white;
+    }
+    .show-menu ul li a{
+        color: var(--primaryColor);
+    }
     #logo-wrapper{
         max-width: 150px;
     }
@@ -970,10 +1043,6 @@ small{
     header nav ul{
         justify-content: flex-end;
     }
-    #menu ul #searchField form button {
-        top:8%;
-        right: 8%;
-    }
     #menu ul #searchField{
         order:2;
     }
@@ -982,6 +1051,9 @@ small{
     }
     .media-cover .media-text{
         padding: 0 10%;
+    }
+    .media-cover .media-text h1{
+        font-size: var(--h1FontSize);
     }
     .underline-wrapper{
         max-width: 90vw;
@@ -1063,15 +1135,22 @@ small{
     }
     /*Sources*/
     #sources-page section{
-        max-width: 800px;
+        max-width: 900px;
     }
     #sources-page #gallery-grid{
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2,1fr);
         gap: 0.5rem;
     }
+    
     #sources-page #gallery-grid figure{
         height: 100%;
         width: 100%;
+    }
+    #sources-page #gallery-grid figure figcaption{
+        visibility: hidden;
+    }
+    #sources-page #gallery-grid figure:hover figcaption{
+        visibility: visible;
     }
     /*AUTHORS*/
     #authors-page .grid{
@@ -1086,6 +1165,14 @@ small{
     #author-profile-page aside{
         grid-column: 1/2;
         grid-row: 1/-1;
+    }
+    /*Stories*/
+    .vertical-list .list-item .thumbnail{
+        display: block;
+        margin-right: 2rem;
+        width: 200px;
+        min-height: 100px;
+        height: 100%;
     }
     /*Footer*/
     .newsletter-subscription{
@@ -1157,6 +1244,22 @@ small{
     /*AUTHORS*/
     #authors-page .grid{
         grid-template-columns: repeat(4,1fr);
+    }
+    /*SOURCES*/
+    #sources-page #gallery-grid{
+        grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+    }
+    #sources-page #gallery-grid .grid-item{
+        aspect-ratio: 1/1.5;
+    }
+    .two-rows{
+        grid-column-start: 2;
+        grid-row-start: row1-start;
+        grid-row-end: row2-end;
+    }
+    .two-rows img{
+        grid-row: 1 / span 2;
+        height: 100%;
     }
     /*FOOTER*/
     .footer-menu-wrapper{
