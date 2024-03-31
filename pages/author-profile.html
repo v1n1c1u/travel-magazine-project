@@ -10,17 +10,51 @@
     <title>Author Profile</title>
 </head>
 <body>
-    <header></header>
+    <header>
+        <nav>
+            <div id="logo-wrapper">
+                <a href="../index.html">
+                    <img src="../assets/imgs/logo_black.png" alt="Odyssey Logo"  id="logo-img">
+                </a>
+                <div id="menu-toggle" class="toggle-black">
+                    <button aria-label="Toggle menu" id="toggle-button">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="menu" class="menu-list menu-list-black">
+                <ul>
+                    <li><a href="./stories.html">Stories</a></li>
+                    <li><a href="./authors.html">Authors</a></li>
+                    <li><a href="./sources.html" class="active">Sources</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li  id="searchField">
+                        <form action="#" method="get">
+                            <input type="search" name="search" placeholder="Search">
+                            <button type="submit">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <main>
-        <div id="author-profile-page">
-            <div class="grid content centralized">
+        <div id="author-profile-page" class="content centralized">
+            <div class="page-title">
+                <h1>Author page</h1>
+                <div class="underline-wrapper">
+                    <img src="../assets/svg/underline-wave.svg" alt="Wave">
+                </div>
+            </div>
+            <div class="grid ">
                 <div class="flex flex-direction-column vertical-list">
                     <div class="list-item flex justify-content-space-between">
-                        <div class="number">
-                            01
-                        </div>
+                        <div class="number">01</div>
                         <div class="title">
-                            10 whimsical ways to experience Scotland
+                            <h2>10 whimsical ways to experience Scotland</h2>
+                            <div class="description"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis alias iste quis nemo quasi nobis. Fugiat sapiente autem aliquam magnam ipsa saepe accusamus nisi, et reprehenderit qui nobis voluptatem voluptatum corrupti, rem eius, quas ab vel. Corporis architecto, expedita beatae sapiente omnis nisi, quo tempora rem quidem animi perferendis autem?</p></div>
                         </div>
                         <div class="link">
                             <a href="#" target="_blank" title="View original article">
@@ -31,7 +65,7 @@
                     </div>
                     <div class="list-item flex justify-content-space-between">
                         <div class="number">02</div>
-                        <div class="title">A guide to Ghent, Belgium's rebellious, unsung city</div>
+                        <div class="title"><h2>A guide to Ghent, Belgium's rebellious, unsung city</h2></div>
                         <div class="link">
                             <a href="#" target="_blank" title="View original article">
                                 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
@@ -41,7 +75,7 @@
                     </div>
                     <div class="list-item flex justify-content-space-between">
                         <div class="number">03</div>
-                        <div class="title">Where to stay in Denver, gateway to the Rockies</div>
+                        <div class="title"><h2>Where to stay in Denver, gateway to the Rockies</h2></div>
                         <div class="link">
                             <a href="#" target="_blank" title="View original article">
                                 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
@@ -51,7 +85,7 @@
                     </div>
                     <div class="list-item flex justify-content-space-between" >
                         <div class="number">04</div>
-                        <div class="title">Visiting Scotland? Here’s what the locals love</div>
+                        <div class="title"><h2>Visiting Scotland? Here’s what the locals love</h2></div>
                         <div class="link">
                             <a href="#" target="_blank" title="View original article">
                                 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
@@ -61,7 +95,7 @@
                     </div>
                     <div class="list-item flex justify-content-space-between">
                         <div class="number">05</div>
-                        <div class="title">Not a hiker? That’s not a problem at these 8 national parks</div>
+                        <div class="title"><h2>Not a hiker? That’s not a problem at these 8 national parks</h2></div>
                         <div class="link">
                             <a href="#" target="_blank" title="View original article">
                                 <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
@@ -74,7 +108,7 @@
                     <div class="author-profile-wrapper">
                         <div class="author-profile">
                             <div class="author-photo">
-                                <img src="../../assets/imgs/logo.png" alt="Author photo">
+                                <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Author photo">
                             </div>
                             <h3>Hanbee Choi</h3>
                             <p>Writer in National</p>
@@ -90,7 +124,6 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="#" class="view-profile">View Author Profile</a>
                     </div>
                 </aside>
             </div>
@@ -114,7 +147,7 @@
                         <img src="./assets/imgs/logo.png" alt="Odyssey Logo" id="footer-logo">                        
                     </div>
                     <ul id="footer-menu">
-                        <li><a href="#">Stories</a></li>
+                        <li><a href="./pages/stories.html">Stories</a></li>
                         <li><a href="./pages/authors.html">Authors</a></li>
                         <li><a href="./pages/sources.html">Sources</a></li>
                         <li><a href="./pages/contact.html">Contact</a></li>

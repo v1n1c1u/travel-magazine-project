@@ -18,7 +18,7 @@ html, body{
     --h1FontSize: 3rem;
     --h2FontSize: 1.2rem;
 }
-h1,h2,h3,h4,button, .view-profile, .author-profile p, label{
+h1,h2,h3,h4,button, .view-profile, .author-profile p, label, figcaption{
     font-family: Montserrat, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 h1,h2,h3{
@@ -69,6 +69,59 @@ header, main, footer{
     width: 90vw;
     margin: auto;
 }
+.vertical-list .list-item{
+    height: fit-content;
+    min-height: 100px;
+    border-bottom: thin solid var(--subtleColor);
+}
+.vertical-list .list-item:hover{
+    background-color: rgba(211, 211, 211, 0.236);
+}
+.vertical-list .list-item div{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.vertical-list .list-item .number{
+    margin-right: 1rem;
+    color: gray;
+    font-size: 3rem;
+    min-width: 50px;
+}
+.vertical-list .title{
+    width: 100%;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 0 10px;
+}
+.vertical-list .title h2{
+    width: 100%;
+    text-align: left;
+}
+.vertical-list .title .description{
+    max-width: 50vw;
+    overflow: hidden;
+    align-self: flex-start;
+    margin: 0;
+}
+.vertical-list .title .description p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0;
+    color: gray;
+}
+.vertical-list .list-item .link{
+    min-width: 25px;
+    text-align: center;
+}
+.vertical-list .list-item .link a{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: gray;
+}
 main .content{
     margin: 0 auto 2rem auto;
 }
@@ -86,7 +139,8 @@ ul li a{
     font-style: normal;
 }
 .centralized{
-    width: 100vw;
+    max-width: 950px;
+    width: 90vw;
     min-height: 100vh;
     margin-top: 9rem !important;
 }
@@ -126,6 +180,7 @@ header{
 }
 
 header nav{
+    overflow: hidden;
     box-sizing: border-box;
     max-height: 150px;
     border-bottom: 5px solid var(--accentColor);
@@ -261,8 +316,6 @@ header nav, header nav ul{
     padding: 0.5rem 1rem;
     height: 100%;
 }
-
-
 #menu-toggle button:hover{
     cursor: pointer;
 }
@@ -330,7 +383,7 @@ height: 100%;
     color: black;
 }
 .articles-grid article .article-card-link:hover .article-thumbnail img,
-#home aside .most-read-section article .article-card-link:hover .most-read-article img,
+.article-card-link:hover img,
 #sources-page #gallery-grid .grid-item:hover img {
     animation: zoom 0.2s linear both;
 }
@@ -577,6 +630,7 @@ aside section .article-card-wrapper{
     overflow: hidden;
     margin: 1rem 1rem 1rem 0;
 }
+
 .story aside{
     margin-top: 0;
 }
@@ -780,53 +834,7 @@ textarea{
 #sources-page #sources-list .flex{
     align-items: center;
 }
-.vertical-list .list-item{
-    height: fit-content;
-    min-height: 100px;
-    border-bottom: thin solid var(--subtleColor);
-}
-.vertical-list .list-item:hover{
-    background-color: rgba(211, 211, 211, 0.236);
-}
-.vertical-list .list-item div{
-    display: flex;
-    align-items: center;
-    justify-content: start;
-}
-#sources-page #sources-list .number{
-    margin-right: 1rem;
-    color: gray;
-    font-size: 3rem;
-    min-width: 50px;
-}
-.vertical-list .title{
-    width: 100%;
-    flex-direction: column;
-    justify-content: start;
-    padding: 0 10px;
-}
-.vertical-list .title h2{
-    width: 100%;
-    text-align: left;
-}
-.vertical-list .list-item .thumbnail{
-    display:none;
-}
-.vertical-list .list-item .thumbnail img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-.vertical-list .list-item .link{
-    min-width: 25px;
-    text-align: center;
-}
-.vertical-list .list-item .link a{
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    color: gray;
-}
+
 /*------------- AUTHORS -------------*/
 #authors-page .grid, #about-page p{
     max-width: 800px;
@@ -836,6 +844,12 @@ textarea{
 #author-profile-page .grid{
     grid-template-columns: 1fr;
     gap: 2rem;
+}
+#author-profile-page aside .author-profile-wrapper{
+    margin: auto;
+}
+#author-profile-page{
+    max-width: 1200px;
 }
 /*-------------- ABOUT ---------------*/
 #about-page p{
@@ -957,12 +971,6 @@ small{
     main .content{
         overflow: hidden;
     }
-    /*
-    .centralized{
-        max-width: 950px;
-        width: 90vw;
-    }
-    */
     /*CONTACT*/
     #contact form{
         padding: 1rem 5rem;
@@ -1018,7 +1026,6 @@ small{
     }
     header{
         padding-top:1vh;
-        /*height: 10%;*/
     }
     header nav,
     header nav ul{
@@ -1152,10 +1159,12 @@ small{
 
     /*Author profile page*/
     #author-profile-page .grid{
-        grid-template-columns: 250px 1fr !important;
+        grid-template-columns: 1fr 3fr !important;
         gap: 2rem;
     }
     #author-profile-page aside{
+        margin: auto;
+        margin-top: 0;
         grid-column: 1/2;
         grid-row: 1/-1;
     }
@@ -1234,6 +1243,10 @@ small{
     /*AUTHORS*/
     #authors-page .grid{
         grid-template-columns: repeat(4,1fr);
+    }
+    /*AUTHOR PROFILE PAGE*/
+    #author-profile-page .grid{
+        grid-template-columns: 250px 1fr !important;
     }
     /*SOURCES*/
     #sources-page #gallery-grid{
