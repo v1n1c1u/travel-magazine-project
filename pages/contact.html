@@ -42,55 +42,57 @@
         </nav>
     </header>
     <main>
-        <div id="contact-page" class="content centralized">
-            <div class="page-title">
-                <h1>Get in touch!</h1>
-                <div class="underline-wrapper">
-                    <img src="../assets/svg/underline-wave.svg" alt="Wave">
+        <div id="contact-page">
+            <div class="content centralized">
+                <div class="page-title">
+                    <h1>Get in touch!</h1>
+                    <div class="underline-wrapper">
+                        <img src="../assets/svg/underline-wave.svg" alt="Wave" aria-hidden="true">
+                    </div>
+                    <p>Any question or remarks? Just write us a message</p>
                 </div>
-                <p>Any question or remarks? Just write us a message</p>
-            </div>
-            <div id="contact" class="grid">
-                <div id="contact-info">
-                    <h3>Contact information</h3>
-                    <div><i class="fa-solid fa-phone" aria-hidden="true"></i>&nbsp;(111) 111-1111</div>
-                    <div><i class="fa-solid fa-envelope" aria-hidden="true"></i>&nbsp;odyssey@magazine.com</div>
-                    <div><i class="fa-solid fa-location-dot" aria-hidden="true"></i>&nbsp;100 West 49th Avenue, Vancouver B.C. - Canada V5Y 2Z6</div>
+                <div id="contact" class="grid">
+                    <div id="contact-info">
+                        <h3>Contact information</h3>
+                        <div><i class="fa-solid fa-phone" aria-hidden="true"></i>&nbsp;(111) 111-1111</div>
+                        <div><i class="fa-solid fa-envelope" aria-hidden="true"></i>&nbsp;odyssey@magazine.com</div>
+                        <div><i class="fa-solid fa-location-dot" aria-hidden="true"></i>&nbsp;100 West 49th Avenue, Vancouver B.C. - Canada V5Y 2Z6</div>
+                    </div>
+                    <form>
+                        <h3>Your information</h3>
+                        <div class="form-row">
+                            <div class="form-group two-col">
+                                <label for="firstName">First Name</label>
+                                <input id="firstName" type="text" required>
+                            </div>
+                            <div class="form-group two-col">
+                                <label for="lastName">Last Name</label>
+                                <input id="lastName" type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-row one-col">
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input id="email" type="text" required>
+                            </div>
+                        </div>
+                        <div class="form-row one-col">
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input id="phone" type="text" required>
+                            </div>
+                        </div>
+                        <h3>Message</h3>
+                        <div class="form-group">
+                            <textarea id="message">
+    
+                            </textarea>
+                        </div>
+                        <div ID="button-wrapper">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
                 </div>
-                <form>
-                    <h3>Your information</h3>
-                    <div class="form-row">
-                        <div class="form-group two-col">
-                            <label for="firstName">First Name</label>
-                            <input id="firstName" type="text" required/>
-                        </div>
-                        <div class="form-group two-col">
-                            <label for="lastName">Last Name</label>
-                            <input id="lastName" type="text" required/>
-                        </div>
-                    </div>
-                    <div class="form-row one-col">
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input id="email" type="text" required/>
-                        </div>
-                    </div>
-                    <div class="form-row one-col">
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input id="phone" type="text" required/>
-                        </div>
-                    </div>
-                    <h3>Message</h3>
-                    <div class="form-group">
-                        <textarea id="message">
-
-                        </textarea>
-                    </div>
-                    <div ID="button-wrapper">
-                        <button type="submit">Submit</button>
-                    </div>
-                </form>
             </div>
         </div>
     </main>
