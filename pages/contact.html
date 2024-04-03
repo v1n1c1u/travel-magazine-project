@@ -18,12 +18,9 @@
                     <img src="../assets/imgs/logo_black.png" alt="Odyssey Logo Black"  id="logo-img">
                 </a>
                 <div id="menu-toggle" class="toggle-black">
-                    <button aria-label="Toggle menu" id="toggle-button">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
+                    <button aria-label="Toggle menu" id="toggle-button"><i class="fa-solid fa-bars"></i></button>
                 </div>
             </div>
-
             <div id="menu" class="menu-list menu-list-black">
                 <ul>
                     <li><a href="../pages/stories.html">Stories</a></li>
@@ -96,8 +93,6 @@
             </div>
         </div>
     </main>
-
-
     <footer>
         <div class="content">
             <div class="newsletter-subscription">
@@ -105,8 +100,10 @@
                     <h3>Subscribe to our newsletter!</h3>
                     <p>Subscribe to our newsletter for exclusive insights, updates, and special offers delivered straight to your inbox.</p>
                 </div>
-                <form action="#" method="get">
-                    <input type="text" placeholder="Your e-mail">
+                <form action="#" method="get" id="subscribe-form">
+                    <span class="error hidden" id="error-message" aria-hidden="true">Please enter a valid e-mail</span>
+                    <label class="visually-hidden" for="email">Your e-mail</label>
+                    <input type="text" placeholder="Your e-mail" name="email" id="subscription-email">
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
@@ -114,14 +111,14 @@
             <div class="footer-wrapper">
                 <div class="footer-menu-wrapper">
                     <div id="footer-logo-wrapper">
-                        <img src="../assets/imgs/logo.png" alt="Odyssey Logo" id="footer-logo">                        
+                        <img src="./assets/imgs/logo.png" alt="Odyssey Logo" id="footer-logo">                        
                     </div>
                     <ul id="footer-menu">
-                        <li><a href="#">Stories</a></li>
-                        <li><a href="#">Authors</a></li>
-                        <li><a href="#">Sources</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="./pages/stories.html">Stories</a></li>
+                        <li><a href="./pages/authors.html">Authors</a></li>
+                        <li><a href="./pages/sources.html">Sources</a></li>
+                        <li><a href="./pages/contact.html">Contact</a></li>
+                        <li><a href="./pages/about.html">About</a></li>
                     </ul>
                 </div>
                 <ul id="footer-socials">

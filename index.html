@@ -40,11 +40,8 @@
         <div id="home-banner" class="media-cover">
             <div class="media-text">
                 <h1>Your Odyssey starts here</h1>
-                <p>
-                    Welcome to Wanderlust Explorer, your gateway to unforgettable adventures around the globe! Dive into a world of discovery, where every destination has a story to tell. 
-                </p>
+                <p>Welcome to Wanderlust Explorer, your gateway to unforgettable adventures around the globe! Dive into a world of discovery, where every destination has a story to tell.</p>
             </div>
-            <!--https://www.wallpaperflare.com/search?wallpaper=travel-->
             <img src="https://images.pexels.com/photos/2104152/pexels-photo-2104152.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Image">
         </div>
         <div id="home" class="grid content">
@@ -54,8 +51,10 @@
                     <article class="main-article">
                         <a href="./pages/story.html" target="_blank" class="article-card-link">
                             <div class="article-thumbnail">
-                                <div class="article-views">
-                                    <span class="views"><i class="fa-regular fa-eye"></i>&nbsp;&nbsp;356</span>
+                                <div class="card-content">
+                                    <div class="article-views">
+                                        <span class="views"><i class="fa-regular fa-eye"></i>&nbsp;&nbsp;472</span>
+                                    </div>
                                 </div>
                                 <img src="https://i.natgeofe.com/n/41992a0e-a0ab-441f-9412-c8c088a5cd16/NationalGeographic_2576344_3x2.jpg?w=718&h=479" alt="Man piloting a boat in Scotland's coast">
                             </div>
@@ -149,7 +148,7 @@
                     <div class="aside-content">
                         <div class="content-wrapper">
                             <div class="aside-article-thumb article-card-wrapper">
-                                <a href="#"  class="article-card-link">
+                                <a href="./pages/stories.html"  class="article-card-link">
                                     <article class="most-read-article">
                                         <!--Photo by Luis Andrade from Pexels: https://www.pexels.com/photo/people-sitting-in-a-park-in-english-bay-vancouver-canada-19323470/-->
                                         <img src="https://images.pexels.com/photos/19323470/pexels-photo-19323470/free-photo-of-people-sitting-in-a-park-in-english-bay-vancouver-canada.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="People Sitting in a Park in English Bay, Vancouver, Canada">
@@ -164,7 +163,7 @@
                                 </a>
                             </div>
                             <div class="aside-article-thumb article-card-wrapper">
-                                <a href="#"  class="article-card-link">
+                                <a href="./pages/stories.html"  class="article-card-link">
                                     <article class="most-read-article">
                                         <!--Photo by Florencia Potter from Pexels: https://www.pexels.com/photo/mountain-range-and-body-of-water-351283/-->
                                         <img src="https://images.pexels.com/photos/351283/pexels-photo-351283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Mountain Range and Body of Water">
@@ -179,7 +178,7 @@
                                 </a>
                             </div>
                             <div class="aside-article-thumb  article-card-wrapper">
-                                <a href="#"  class="article-card-link">
+                                <a href="./pages/stories.html" class="article-card-link">
                                     <article class="most-read-article">
                                         <img src="https://images.pexels.com/photos/2376713/pexels-photo-2376713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Photography Of High-rise Buildings">
                                         <div class="card-content">
@@ -208,8 +207,8 @@
                                         <!--Photo by Simon Robben from Pexels: https://www.pexels.com/photo/man-in-brown-polo-shirt-614810-->
                                         <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Author photo">
                                     </div>
-                                    <h4>Hanbee Choi</h4>
-                                    <p>Writer in National</p>
+                                    <h4>Marcus Patel</h4>
+                                    <p>Writer in National Geographic</p>
                                 </div>
                                 <a href="./pages/author-profile.html" target="_blank" class="view-profile">View articles</a>
                             </div>
@@ -219,7 +218,7 @@
                                         <!--Photo by Andrea Piacquadio from Pexels: https://www.pexels.com/photo/woman-in-collared-shirt-774909/-->
                                         <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Author photo">
                                     </div>
-                                    <h4>Hanbee Choi</h4>
+                                    <h4>Emily Rodriguez</h4>
                                     <p>Writer in National</p>
                                 </div>
                                 <a href="./pages/author-profile.html" target="_blank" class="view-profile">View articles</a>
@@ -230,7 +229,7 @@
                                         <!--Photo by Justin Shaifer from Pexels: https://www.pexels.com/photo/photography-of-a-guy-wearing-green-shirt-1222271/-->
                                         <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Author photo">
                                     </div>
-                                    <h4>Hanbee Choi</h4>
+                                    <h4>Benjamin Rivera</h4>
                                     <p>Writer in National</p>
                                 </div>
                                 <a href="./pages/author-profile.html" target="_blank" class="view-profile">View articles</a>
@@ -251,8 +250,10 @@
                     <h3>Subscribe to our newsletter!</h3>
                     <p>Subscribe to our newsletter for exclusive insights, updates, and special offers delivered straight to your inbox.</p>
                 </div>
-                <form action="#" method="get">
-                    <input type="text" placeholder="Your e-mail">
+                <form action="#" method="get" id="subscribe-form">
+                    <span class="error hidden" id="error-message" aria-hidden="true">Please enter a valid e-mail</span>
+                    <label class="visually-hidden" for="email">Your e-mail</label>
+                    <input type="text" placeholder="Your e-mail" name="email" id="subscription-email">
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
@@ -263,7 +264,7 @@
                         <img src="./assets/imgs/logo.png" alt="Odyssey Logo" id="footer-logo">                        
                     </div>
                     <ul id="footer-menu">
-                        <li><a href="#">Stories</a></li>
+                        <li><a href="./pages/stories.html">Stories</a></li>
                         <li><a href="./pages/authors.html">Authors</a></li>
                         <li><a href="./pages/sources.html">Sources</a></li>
                         <li><a href="./pages/contact.html">Contact</a></li>

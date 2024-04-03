@@ -212,8 +212,10 @@
                         <h3>Subscribe to our newsletter!</h3>
                         <p>Subscribe to our newsletter for exclusive insights, updates, and special offers delivered straight to your inbox.</p>
                     </div>
-                    <form action="#" method="get">
-                        <input type="text" placeholder="Your e-mail">
+                    <form action="#" method="get" id="subscribe-form">
+                        <span class="error hidden" id="error-message" aria-hidden="true">Please enter a valid e-mail</span>
+                        <label class="visually-hidden" for="email">Your e-mail</label>
+                        <input type="text" placeholder="Your e-mail" name="email" id="subscription-email">
                         <button type="submit">Subscribe</button>
                     </form>
                 </div>
@@ -224,7 +226,7 @@
                             <img src="./assets/imgs/logo.png" alt="Odyssey Logo" id="footer-logo">                        
                         </div>
                         <ul id="footer-menu">
-                            <li><a href="#">Stories</a></li>
+                            <li><a href="./pages/stories.html">Stories</a></li>
                             <li><a href="./pages/authors.html">Authors</a></li>
                             <li><a href="./pages/sources.html">Sources</a></li>
                             <li><a href="./pages/contact.html">Contact</a></li>
