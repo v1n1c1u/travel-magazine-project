@@ -206,6 +206,11 @@ header nav{
     box-sizing: border-box;
     border-bottom: 3px solid var(--accentColor);
 }
+
+#index-nav{
+    border-bottom: none;
+}
+
 header nav, header nav ul{
     display: flex;
     flex-direction: column;
@@ -218,7 +223,7 @@ header nav, header nav ul{
     order:2;
     display: flex;
     align-items: center;
-    border-top: 2px solid var(--accentColor);
+    border-top: 2px solid var(--primaryColor);
 }
 #menu ul li a,
 #menu ul li form{
@@ -255,7 +260,7 @@ header nav, header nav ul{
     color: var(--primaryColor);
 }
 .menu-list ul #searchField input{
-    border: 2px solid var(--subtleColor);
+    border: 2px solid gray;
     background-color: transparent;
     border-radius: 50px;
     margin: auto;
@@ -264,6 +269,11 @@ header nav, header nav ul{
     width: 100%;
     max-width: 350px;
 }
+
+.menu-list  ul #searchField input::placeholder{
+    color: var(--subtleColor);
+}
+
 .menu-list ul #searchField input::-ms-clear {
     display: none;
 }
@@ -285,7 +295,7 @@ header nav, header nav ul{
 #menu ul #searchField form button {
     text-indent: -999px;
     overflow: hidden;
-    width: 40px;
+    width: 20px;
     position: absolute;
     top:1rem;
     right: 1rem;
@@ -293,11 +303,15 @@ header nav, header nav ul{
     margin: 0;
     border: 1px solid transparent;
     border-radius: inherit;
-    background: url("../assets/svg/icons8-search-16.svg") center;
+    background: url("../assets/svg/icons8-search-16-dark.svg") center;
     background-repeat: no-repeat;
     cursor: pointer;
     opacity: 0.7;
 }
+#menu ul #searchField form button{
+    margin-right: 10px;
+}
+
 #menu ul #searchField form button:hover {
     opacity: 1;
 }
@@ -312,7 +326,11 @@ header nav, header nav ul{
     width: 50%;
 }
 #logo-wrapper #logo-img{
-    height: 100%;
+    height: 90%;
+    display: block;
+    margin-top: 10px;
+    padding-left: 1rem;
+
 }
 .menu-list{
     display: none;
@@ -326,9 +344,9 @@ header nav, header nav ul{
 }
 
 #menu-toggle button{
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0 1rem;
-    color: var(--accentColor);
+    color: var(--primaryColor);
     border: none;
     background-color: inherit;
     padding: 0.5rem 1rem;
@@ -1032,7 +1050,7 @@ footer a:hover{
     display: flex;
 }
 #footer-logo{
-    width: 100%;
+    width: 40%;
     object-fit: contain;
 }
 .footer-menu-wrapper{
@@ -1132,6 +1150,10 @@ small{
     #logo-wrapper{
         max-width: 150px;
     }
+    #logo-wrapper #logo-img{
+        padding-left: 0;
+    }
+    
     #menu-toggle{
         display: none;
     }
@@ -1150,7 +1172,7 @@ small{
         width: 90%;
         height:10vh;
         margin: auto;
-        align-items: center;
+        align-items: flex-end;
     }
     header nav ul{
         justify-content: flex-end;
@@ -1396,7 +1418,7 @@ small{
     #footer-logo-wrapper{
         text-align: center;
         width: 40%;
-        padding:1rem;
+        /* padding:1rem; */
     }
     #footer-menu{
         grid-template-columns: repeat(5,1fr);
