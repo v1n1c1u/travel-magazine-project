@@ -1323,6 +1323,9 @@ small{
     #sources-page #gallery-grid figure:hover figcaption{
         visibility: visible;
     }
+    .info{
+        display: none;
+    }
     /*AUTHORS*/
     #authors-page .grid{
         grid-template-columns: repeat(3,1fr);
@@ -1450,11 +1453,6 @@ small{
     }
     #sources-page #gallery-grid .two-columns img{
         height: 100%;
-    }
-
-    /*Contact*/
-    .info{
-        display: none;
     }
 
     /*FOOTER*/
