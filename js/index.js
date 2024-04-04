@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded",()=>{
     const toggleMenuButton = document.getElementById("toggle-button");
+    const searchButton = document.getElementById("searchBtn");
     const menu = document.getElementById("menu");
     const newsletterForm = document.getElementById("subscribe-form");
     const subscribeEmailInput = document.getElementById("subscription-email");
@@ -7,7 +8,10 @@ document.addEventListener("DOMContentLoaded",()=>{
     const footerInputMessage = document.getElementById("message");
 
     toggleMenuButton.addEventListener("click", toggleMenu);
-
+    searchButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location = "./pages/500.html";
+    });
     function toggleMenu(){
         console.log("is working");
         menu.classList.toggle("show-menu");
@@ -38,5 +42,5 @@ document.addEventListener("DOMContentLoaded",()=>{
             subscribeEmailInput.classList.add("invalid-input");    //The pop up alert for an invalid email address
             subscribeEmailInput.focus();   //The pop up alert for an invalid email address
         }
-    })
+    });
 })

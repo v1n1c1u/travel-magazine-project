@@ -20,6 +20,17 @@ html, body{
     --h1FontSize: 3rem;
     --h2FontSize: 1.2rem;
 }
+/* taken from: https://blog.maximerouiller.com/post/remove-the-x-from-internet-explorer-and-chrome-input-type-search/*/
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
 h1,h2,h3,h4,button, .view-profile, .author-profile p, label, figcaption{
     font-family: Montserrat, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -288,10 +299,6 @@ header nav, header nav ul{
 .menu-list  ul #searchField input::placeholder{
     color: var(--subtleColor);
 }
-
-.menu-list ul #searchField input::-ms-clear {
-    display: none;
-}
 .menu-list ul #searchField input:focus{
     background-color: white;
     border-color: var(--primaryColor);
@@ -302,6 +309,7 @@ header nav, header nav ul{
 #menu ul #searchField input::placeholder{
     font-style: italic;
     position: relative;
+    color: gray;
 }
 #menu ul #searchField form button {
     text-indent: -999px;
@@ -474,6 +482,7 @@ aside .section-title{
     min-width: 150px;
     max-width: 30%;
     aspect-ratio: 1/1;
+    position: relative;
 }
 .article-thumbnail img{
     width: 100%;
@@ -488,6 +497,7 @@ aside .section-title{
 }
 .main-article .main-article-title{
     font-size: 2rem;
+    margin-top: 0.2rem;
 }
 .article-card-wrapper{
     padding: 0 1rem;
@@ -660,19 +670,33 @@ aside section .article-card-wrapper{
     display: flex;
     margin-top: 2vh;
 }
-.story article .article-footer a{
+.article-tags{
+    display: flex;
+    padding-bottom: 1rem;
+}
+.tag,
+.story article .article-footer .share-option
+{
     text-decoration: none;
     display: block;
-    font-size: 0.9rem;
     letter-spacing: 1px;
+    border-radius: 50px;
+    min-width: 80px;
+    padding: 0.2rem;
+    text-align: center;
+    margin-right: 1vw;
+    border: 2px solid lightgray;
+    font-family: Montserrat, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.tag{
+    color: darkgray;
+    font-size: clamp(10px,1rem,12px);
+    padding: 5px;
+}
+.story article .article-footer *{
+    font-size: 0.9rem;
     padding: 0.5rem;
     min-width: 100px;
-    border-radius: 50px;
-    text-align: center;
-    color: gray;
-    margin-right: 1vw;
-    border: thin solid lightgray;
-    font-family: Montserrat, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .story article .article-footer .share-option{
     color: white;
