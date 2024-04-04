@@ -284,6 +284,7 @@ header nav, header nav ul{
 .show-menu ul li #searchField input{
     color: white !important;
 }
+
 .nav-black .menu-list ul #searchField input{
     border-color: var(--subtleColor) !important;
     color: var(--subtleColor);
@@ -746,6 +747,10 @@ aside section .article-card-wrapper{
     ;
 }
 /*------------- CONTACT -------------*/
+.content.centralized{
+    overflow: visible;
+}
+
 #contact-page{
     background-image: url("../assets/svg/waves-background.svg");
     background-position: bottom;
@@ -758,6 +763,7 @@ aside section .article-card-wrapper{
     max-width: 900px;
     margin: 5vh auto;
     background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 #contact-page p{
     font-size: 1.3rem;
@@ -770,14 +776,39 @@ aside section .article-card-wrapper{
     max-width: 90vw;
     color: var(--primaryColor);
 }
-#contact-info{
-    padding: 1rem;
-    background-color: rgba(216, 234, 255, 1);
-    grid-row: 2/-1;
+
+h3.info{
+    margin-bottom: 4.5rem;
 }
+
+
+textarea#message{
+    padding: 1rem;
+}
+
 #contact-info div{
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    align-items: baseline;
     margin: 1rem 0;
 }
+
+#contact-info h3{
+    margin-bottom: 2rem;
+    margin-top: 0;
+}
+
+textarea#message::placeholder{
+    color: var(--subtleColor);
+}
+
+#contact-info{
+    padding: 1rem 5rem;
+    background-color: rgba(216, 234, 255, 1);
+    grid-row: 2/-1;
+
+}
+
 #contact-info i {
     background-color: white;
     color: var(--accentColor);
@@ -788,7 +819,6 @@ aside section .article-card-wrapper{
     padding:10px;
 }
 #contact form{
-    margin: 1vh 0;
     padding: 1rem 2rem 1rem 1rem;
     max-width: 95vw;
 }
@@ -816,6 +846,7 @@ textarea{
     border: none;
     border-bottom: 2px solid lightgrey;
 }
+
 #contact form input:focus{
     border-width: 3px;
     border-color: var(--accentColor);
@@ -1097,13 +1128,15 @@ small{
 }
 /*Large Mobile*/
 @media only screen and (min-width:500px){
+
     main .content{
         overflow: hidden;
     }
     /*CONTACT*/
     #contact form{
-        padding: 1rem 5rem;
+        padding: 2rem 5rem;
     }
+
     #contact form button{
         width: 150px;
         text-align: center;
@@ -1254,15 +1287,19 @@ small{
         flex-direction: row;
         justify-content: space-between;
     }
+    .info{
+        display: none;
+    }
 
     #contact-page #contact{
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 1fr;
-        box-shadow: 1px 1px 10px 2px var(--subtleColor);;
+        /* box-shadow: 1px 1px 10px 2px var(--subtleColor);; */
     }
     #contact-page #contact-info{
         grid-row: 1/-1;
         grid-column: 1/2;
+        padding: 2rem 2rem;
     }
     /*Sources*/
     #sources-page section{
@@ -1411,6 +1448,12 @@ small{
     #sources-page #gallery-grid .two-columns img{
         height: 100%;
     }
+
+    /*Contact*/
+    .info{
+        display: none;
+    }
+
     /*FOOTER*/
     .footer-menu-wrapper{
         width: 100%;
