@@ -52,9 +52,17 @@ header, main, footer{
 article{
     position: relative;
 }
+.error{
+    color: var(--danger);
+}
+.success{
+    color: lightgreen;
+}
 .invalid-input{
-    outline-color: var(--danger)!important;
     border: 3px solid var(--danger) !important;
+}
+.invalid-input:focus{
+    outline-color: var(--danger)!important;
 }
 .read-more a:hover{
     color: var(--accentColor);
@@ -182,6 +190,13 @@ ul li a{
     width: 100%;
     overflow: hidden;
 }
+.underline-wrapper img{
+    width: 100%;
+    min-width: 300px;
+    max-width: 30vw;
+    margin: auto;
+    object-fit: contain;
+}
 .page-title{
     text-align: center;
     margin-bottom: 4rem;
@@ -206,11 +221,9 @@ header nav{
     box-sizing: border-box;
     border-bottom: 3px solid var(--accentColor);
 }
-
 #index-nav{
-    border-bottom: none;
+    border-color: white;
 }
-
 header nav, header nav ul{
     display: flex;
     flex-direction: column;
@@ -223,7 +236,7 @@ header nav, header nav ul{
     order:2;
     display: flex;
     align-items: center;
-    border-top: 2px solid var(--primaryColor);
+    border-top: 1px solid var(--subtleColor);
 }
 #menu ul li a,
 #menu ul li form{
@@ -247,12 +260,14 @@ header nav, header nav ul{
 }
 #menu ul #searchField{
     order:1;
+    border-top: thin solid var(--subtleColor);
 }
 #menu ul #searchField form{
-    width: 100%;
+    width: 50%;
+    min-width: 250px;
     position: relative;
     text-align: right;
-    margin-right: 1rem;
+    margin: auto;
 }
 #subscribe-form input,
 .menu-list ul #searchField input{
@@ -283,10 +298,6 @@ header nav, header nav ul{
 }
 .show-menu ul li #searchField input{
     color: white !important;
-}
-.nav-black .menu-list ul #searchField input{
-    border-color: var(--subtleColor) !important;
-    color: var(--subtleColor);
 }
 #menu ul #searchField input::placeholder{
     font-style: italic;
@@ -328,9 +339,8 @@ header nav, header nav ul{
 #logo-wrapper #logo-img{
     height: 90%;
     display: block;
-    margin-top: 10px;
+    margin-top: 0.4rem;
     padding-left: 1rem;
-
 }
 .menu-list{
     display: none;
@@ -344,7 +354,7 @@ header nav, header nav ul{
 }
 
 #menu-toggle button{
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0 1rem;
     color: var(--primaryColor);
     border: none;
@@ -414,13 +424,11 @@ height: 100%;
     max-width: 90vw;
     margin: auto;
 }
-.article-card-link{
-    text-decoration: none;
-    color: black;
-}
 .articles-grid article .article-card-link:hover img,
 .article-card-link:hover img,
 #sources-page #gallery-grid .grid-item:hover img {
+    position: relative;
+    z-index: 0;
     animation: zoom 0.2s linear both;
 }
 @keyframes zoom{
@@ -463,7 +471,8 @@ aside .section-title{
 .article-thumbnail{
     overflow: hidden;
     width: 100%;
-    min-width: 120px;
+    min-width: 150px;
+    max-width: 30%;
     aspect-ratio: 1/1;
 }
 .article-thumbnail img{
@@ -475,6 +484,7 @@ aside .section-title{
     aspect-ratio: unset;
     height: 300px;
     width: 100%;
+    max-width: unset;
 }
 .main-article .main-article-title{
     font-size: 2rem;
@@ -559,11 +569,12 @@ aside section .article-card-wrapper{
 }
 .article-views{
     position: absolute;
+    z-index: 1;
     right: 0;
     top: 0;
     color: white;
     padding: 1rem;
-    text-shadow: 10px 10px 10px black;
+    text-shadow: 1px 1px 10px black;
 }
 .article-views *,
 .article-ranking *{
@@ -990,6 +1001,7 @@ footer form{
     width: 100%;
 }
 footer form input{
+    margin: 0;
     margin-bottom: 1rem;
     min-width: 60%;
     min-height: 40px;
@@ -1010,13 +1022,12 @@ footer a:hover{
 #subscribe-form{
     position: relative;
 }
-#subscribe-form .error{
-    color: var(--danger);
+#subscribe-form #message{
     font-style: italic;
     position: absolute;
     top: -1.1rem;
     margin: 0;
-    left: 1rem;
+    left: 0;
     font-family: Montserrat, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 0.8rem;
 }
@@ -1038,8 +1049,9 @@ footer a:hover{
 
 .newsletter-subscription div h3{
     font-family: "GFS Didot", 'Times New Roman', Times, serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 400;
+    margin: 0.8rem auto;
 }
 .newsletter-subscription div p{
     font-size: 1.1rem;
@@ -1062,7 +1074,6 @@ footer a:hover{
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
     text-align: center;
-    height:10vh;
 }
 #footer-socials{
     display: flex;
@@ -1094,6 +1105,7 @@ small{
     justify-content: center;
     width: 100%;
     height: 100%;
+    min-height: 30px;
 }
 /*Large Mobile*/
 @media only screen and (min-width:500px){
@@ -1114,11 +1126,9 @@ small{
         grid-template-columns: repeat(2,1fr);
     }
     /*FOOTER*/
-    footer form{
-        flex-direction: row;
-        justify-content: center;
-    }
     .newsletter-subscription form{
+        flex-direction: row;
+        margin: 0;
         width: 100%;
     }
     footer form  *{
@@ -1144,6 +1154,10 @@ small{
         align-items: center;
         border-color: white;
     }
+    #menu ul #searchField form{
+        width: 100%;
+        min-width: unset;
+    }
     .show-menu{
         background-color: white;
     }
@@ -1153,7 +1167,6 @@ small{
     #logo-wrapper #logo-img{
         padding-left: 0;
     }
-    
     #menu-toggle{
         display: none;
     }
@@ -1249,16 +1262,10 @@ small{
     .story aside .author-profile-wrapper{
         margin-top: 10vh;
     }
-    header .nav-black,
-    header .nav-black ul{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
     #contact-page #contact{
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 1fr;
-        box-shadow: 1px 1px 10px 2px var(--subtleColor);;
+        box-shadow: 1px 1px 10px 2px var(--subtleColor);
     }
     #contact-page #contact-info{
         grid-row: 1/-1;
@@ -1332,7 +1339,7 @@ small{
 @media only screen and (min-width: 1000px){
     #home{
         grid-template-columns: 3fr 1fr;
-        gap: 2rem;
+        gap: 4rem;
     }
     .articles-grid{
         grid-template-columns: repeat(3,1fr);

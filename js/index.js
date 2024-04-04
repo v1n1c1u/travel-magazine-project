@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     const menu = document.getElementById("menu");
     const newsletterForm = document.getElementById("subscribe-form");
     const subscribeEmailInput = document.getElementById("subscription-email");
-    const footerErrorMessage = document.getElementById("error-message");
+    const subscribeButton = document.getElementById("submitBtn");
+    const footerInputMessage = document.getElementById("message");
 
     toggleMenuButton.addEventListener("click", toggleMenu);
 
@@ -14,22 +15,28 @@ document.addEventListener("DOMContentLoaded",()=>{
     //email validation based on: https://www.edureka.co/blog/javascript-email-validation/
     newsletterForm.addEventListener("submit",(e)=>{
         e.preventDefault();
-        const mailRegex = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+        const mailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if(subscribeEmailInput.value.match(mailRegex)){
             subscribeEmailInput.classList.remove("invalid-input");
-            if(footerErrorMessage.classList.contains("visible")){
-                footerErrorMessage.classList.add("invisible");
-                footerErrorMessage.setAttribute("aria-hidden", "true");
+            footerInputMessage.innerText = "Subscription successful!";
+            footerInputMessage.classList.add("success");
+            subscribeEmailInput.disabled = true;
+            subscribeEmailInput.style.color = "lightgray";
+            if(!footerInputMessage.classList.contains("visible")){
+                footerInputMessage.classList.add("visible");
             }
-            
-            alert("You have entered a valid email address!");    //The pop up alert for a valid email address
+            subscribeButton.disabled = true;
+            subscribeButton.innerHTML = `Subscribed <i class="fa-solid fa-check"></i>`;
+            subscribeButton.style.backgroundColor = "transparent";
+            subscribeButton.style.width = "fit-content";
+            subscribeButton.style.fontStyle = "italic";
         }else{
-            footerErrorMessage.classList.add("visible");
-            footerErrorMessage.setAttribute("aria-hidden", "false");
+            footerInputMessage.innerText = "Please inform a valid e-mail!";
+            footerInputMessage.classList.add("visible");
+            footerInputMessage.classList.add("error");
+            footerInputMessage.setAttribute("aria-hidden", "false");
             subscribeEmailInput.classList.add("invalid-input");    //The pop up alert for an invalid email address
             subscribeEmailInput.focus();   //The pop up alert for an invalid email address
-            document.wai
-            alert("You have entered an invalid email address!");
         }
     })
 })
