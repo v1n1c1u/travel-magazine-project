@@ -104,6 +104,7 @@ ol{
 .active{
     color: white !important;
     background-color: var(--accentColor);
+    border-color: var(--accentColor) !important;
 }
 .active:hover{
     background-color: var(--accentColor) !important;
@@ -235,7 +236,7 @@ header{
 header nav{
     overflow: hidden;
     box-sizing: border-box;
-    border-bottom: 3px solid var(--accentColor);
+    border-bottom: 2px solid #D9D9D9;
 }
 #index-nav{
     border-color: white;
@@ -256,6 +257,7 @@ header nav, header nav ul{
 }
 #menu ul li a,
 #menu ul li form{
+    box-sizing: border-box;
     padding: 1rem;
 }
 .menu-list ul li a{
@@ -270,9 +272,8 @@ header nav, header nav ul{
     justify-content: center;
     align-items: center;
 }
-
 #menu ul li a:hover{
-    background-color:var(--subtleColor);
+    background-color: whitesmoke;
 }
 #menu ul #searchField{
     order:1;
@@ -301,9 +302,10 @@ header nav, header nav ul{
     max-width: 350px;
 }
 
-.menu-list  ul #searchField input::placeholder{
-    color: var(--subtleColor);
+#menu ul #searchField input::placeholder{
+    color:var(--subtleColor) !important;
 }
+
 .menu-list ul #searchField input:focus{
     background-color: white;
     border-color: var(--primaryColor);
@@ -583,7 +585,7 @@ height: 100%;
     bottom: 1rem;
     left: 0;
     right: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.912570130591299) 83%);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 83%);
     z-index: 0;
 }
 .articles-grid{
@@ -623,7 +625,6 @@ height: 100%;
     max-height: 250px;
     overflow: hidden;
     margin: 0;
-    text-align: justify;
 }
 .articles{
     width: 100%;
@@ -1123,7 +1124,7 @@ textarea{
 }
 
 /*------------- AUTHORS -------------*/
-#authors-page .grid, #about-page p{
+#authors-page .grid{
     max-width: 800px;
     margin: auto;
 }
@@ -1148,11 +1149,6 @@ textarea{
 #author-profile-page{
     max-width: 1200px;
 }
-/*-------------- ABOUT ---------------*/
-#about-page p{
-    text-align: justify;
-}
-
 /*-------------- 404 Error ---------------*/
 #error{
     height: 100%;
@@ -1230,7 +1226,7 @@ footer form input{
     padding: 0.1rem 0.6rem;
 }
 footer form input::placeholder{
-    color: gray;
+    color: var(--subtleColor);
 }
 footer form button{
     min-width: 150px;
@@ -1298,7 +1294,7 @@ footer a:hover{
 #footer-socials{
     display: flex;
     margin: auto;
-    justify-content: space-evenly;
+    justify-content: space-between;
     font-size: 1.5rem;
     text-align: center;
     max-width: 300px;
@@ -1323,9 +1319,11 @@ small{
     display: flex;
     place-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-    min-height: 30px;
+    min-height: 50px;
+}
+
+ul#footer-socials li a {
+    margin-left: 1rem;
 }
 /*Large Mobile*/
 @media only screen and (min-width:500px){
@@ -1350,7 +1348,7 @@ small{
     /*FOOTER*/
     .newsletter-subscription form{
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: flex-end;
         margin: 0;
         width: 100%;
     }
@@ -1544,22 +1542,30 @@ small{
     /*Footer*/
     .newsletter-subscription{
         grid-template-columns: 1fr 1fr;
+        gap: 5rem;
     }
 
     .newsletter-subscription div *{
         text-align: left;
     }
     .footer-wrapper{
-        flex-direction: row;
-        width: 90%;
+        flex-direction: column;
+        width: 100%;
         margin: auto;
     }
     .footer-menu-wrapper{
-        width: 60%;
+        width: 100%;
         height: 10vh;
     }
     #footer-socials{
         width: 40%;
+    }
+    #footer-menu{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: flex-end;
+        width: 100%;
+        text-align: center;
     }
 }
 /*Desktop*/
@@ -1652,12 +1658,15 @@ small{
     }
     #footer-logo-wrapper{
         text-align: center;
-        width: 40%;
-        /* padding:1rem; */
+        /* width: 40%; */
+
+        padding-right: 20rem;
+
     }
     #footer-menu{
-        grid-template-columns: repeat(5,1fr);
-        margin-right: 15vw;
+        grid-template-columns: repeat(4,1fr);
+        justify-content: flex-end;
+        /* margin-right: 15vw; */
     }
     .footer-wrapper{
         margin: 0;
