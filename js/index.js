@@ -6,14 +6,26 @@ document.addEventListener("DOMContentLoaded",()=>{
     const subscribeEmailInput = document.getElementById("subscription-email");
     const subscribeButton = document.getElementById("submitBtn");
     const footerInputMessage = document.getElementById("message");
+    const submitMessageButton = document.getElementById("submitMessageBtn");
 
     toggleMenuButton.addEventListener("click", toggleMenu);
+    
+    if(submitMessageButton){
+        submitMessageButton.addEventListener("click",(e)=>{
+            e.preventDefault();
+            window.location = "./500.html";
+        })
+    }
     searchButton.addEventListener("click", (e) => {
         e.preventDefault();
-        window.location = "./pages/500.html";
+        if(window.location.href.endsWith("/index.html")){
+            window.location = "./pages/500.html";
+
+        }else{
+            window.location = "./500.html";
+        }
     });
     function toggleMenu(){
-        console.log("is working");
         menu.classList.toggle("show-menu");
     }
     //email validation based on: https://www.edureka.co/blog/javascript-email-validation/
@@ -31,9 +43,7 @@ document.addEventListener("DOMContentLoaded",()=>{
             }
             subscribeButton.disabled = true;
             subscribeButton.innerHTML = `Subscribed <i class="fa-solid fa-check"></i>`;
-            subscribeButton.style.backgroundColor = "transparent";
-            subscribeButton.style.width = "fit-content";
-            subscribeButton.style.fontStyle = "italic";
+            subscribeButton.classList.add("subscribed");
         }else{
             footerInputMessage.innerText = "Please inform a valid e-mail!";
             footerInputMessage.classList.add("visible");

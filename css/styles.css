@@ -20,7 +20,6 @@ html, body{
     --h1FontSize: 3rem;
     --h2FontSize: 1.2rem;
 }
-/* taken from: https://blog.maximerouiller.com/post/remove-the-x-from-internet-explorer-and-chrome-input-type-search/*/
 /* clears the 'X' from Internet Explorer */
 input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
 input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
@@ -385,7 +384,7 @@ header nav, header nav ul{
 .media-cover{
     width: 100%;
     overflow: hidden;
-    min-height: 400px;
+    min-height: 500px;
     height: 40vh;
     position: relative;
 }
@@ -406,18 +405,18 @@ header nav, header nav ul{
     place-content: center;
     padding: 10% 5% 0 5%;
 }
-#home-banner .media-text h1{
-    font-size: 3.5rem;
-    max-width: 400px;
-    text-align: left;
+#home-banner .media-text{
+    z-index: 1;
 }
-.media-cover .media-text h1{
+#home-banner .media-text h1{
+    font-size: 3rem;
+    text-align: left;
     color: var(--white);
     margin: 0;
-    max-width: 700px;
+    max-width: 800px;
 }
 .media-cover .media-text p{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: Montserrat, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 400;
     max-width: 700px;
@@ -431,7 +430,6 @@ height: 100%;
 }
 #home-banner *{
     box-sizing: border-box;
-    scrollbar-width: 0px;
 }
 .carousel {
     position: relative;
@@ -485,7 +483,7 @@ height: 100%;
     bottom: 1.5rem;
     left: 0;
     text-align: center;
-    z-index: 1;
+    z-index: 2;
 }
 
 .carousel__navigation-list,
@@ -520,7 +518,7 @@ height: 100%;
     }
   
     .carousel__slide:last-child .carousel__snapper {
-      animation-name: none;
+      animation-name: snap;
     }
   }
   
@@ -594,7 +592,6 @@ height: 100%;
     max-width: 90vw;
     margin: auto;
 }
-.articles-grid article .article-card-link:hover img,
 .article-card-link:hover img,
 #sources-page #gallery-grid .grid-item:hover img {
     position: relative;
@@ -608,21 +605,25 @@ height: 100%;
         transform: scale(1.1);
     }
 }
+.article-card-link:hover{
+    color: var(--primaryColor);
+}
 .articles-grid article .article-card-link{
     min-height: fit-content;
     height: 100%;
     display: flex;
+    flex-direction: column;
 }
 .articles-grid .main-article .article-card-link{
     flex-direction: column;
 }
 .articles-grid .article-card-wrapper{
-    height: 44%;
+    flex-grow: 2;
     min-height: 233px;
     overflow: hidden;
 }
 .articles-grid .article-card-wrapper p{
-    max-height: 250px;
+    max-height: 150px;
     overflow: hidden;
     margin: 0;
 }
@@ -641,7 +642,7 @@ aside .section-title{
     overflow: hidden;
     width: 100%;
     min-width: 150px;
-    max-width: 30%;
+    height: 35vh;
     aspect-ratio: 1/1;
     position: relative;
 }
@@ -657,27 +658,27 @@ aside .section-title{
     max-width: unset;
 }
 .main-article .main-article-title{
-    font-size: 2rem;
-    margin-top: 0.2rem;
+    font-size: 1.3rem;
 }
 .article-card-wrapper{
     padding: 0 1rem;
     display: flex;
     flex-direction: column;
-    height: 44%;
     position: relative;
 }
 .box-overflow-gradient{
+    box-sizing: border-box;
+    padding-top: 10vh !important;
     position: absolute;
-    height: 25%;
-    width: 100%;
+    min-height: fit-content;
+    width: 99%;
     bottom:0;
     left: 0;
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 55%);
 }
 .main-article .article-card-wrapper{
     height: auto;
-    padding: 0 2rem;
+    padding: 0 0.5rem;
 }
 .articles-grid article,
 aside article,
@@ -749,7 +750,7 @@ aside section .article-card-wrapper{
 }
 .article-views .views{
     padding: 0.5rem;
-    background-color: rgba(0,0,0,0.50);
+    background-color: rgba(8, 37, 79, 0.5);
 }
 .article-views *,
 .article-ranking *{
@@ -813,17 +814,32 @@ aside section .article-card-wrapper{
     margin: 2rem 0;
     position: relative;
     bottom: -4rem;
+    font-size: 1.2rem;
 }
 .story{
     margin-bottom: 5vh;
+}
+.story .story-subtitle{
+    font-size: 1.3rem;
+    color: gray;
 }
 .story article{
     text-align: justify;
     margin-top: 5vh;
     max-width: 85vw;
 }
+.story article h2{
+    font-size: 1.8rem;
+}
 .story article figure{
     margin: 0;
+}
+.story article figure .credit{
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    font-size: clamp(10px,1rem,14px);
+    color: gray;
+    font-weight: 600;
 }
 .story article img{
     width: 100%;
@@ -837,9 +853,10 @@ aside section .article-card-wrapper{
 }
 .article-tags{
     display: flex;
-    padding: 0.5rem 0;
-    position: absolute;
-    bottom:0.5rem;
+    padding: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-content: end;
 }
 .tag,
 .story article .article-footer .share-option
@@ -859,16 +876,25 @@ aside section .article-card-wrapper{
     color: darkgray;
     font-size: clamp(10px,1rem,12px);
     padding: 5px;
+    margin: 2px;
+    box-sizing: border-box;
 }
-.story article .article-footer *{
+.story article .article-footer a{
     font-size: 0.9rem;
     padding: 0.5rem;
-    min-width: 100px;
 }
 .story article .article-footer .share-option{
     color: white;
     background-color: var(--accentColor);
     border: none;
+    min-height: 30px;
+    min-width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.story article .article-footer .share-option *{
+    padding: 0.2rem;
 }
 .author-profile-wrapper{
     max-width: 350px;
@@ -879,6 +905,11 @@ aside section .article-card-wrapper{
     flex: 0 0 auto;
     overflow: hidden;
     margin: 1rem 1rem 1rem 0;
+}
+.author-profile p{
+    width: 80%;
+    margin: auto;
+    font-size: clamp(10px,1rem,14px);
 }
 
 .story aside{
@@ -948,20 +979,22 @@ aside section .article-card-wrapper{
     ;
 }
 /*------------- CONTACT -------------*/
-.content.centralized{
-    overflow: visible;
-}
 
 #contact-page{
     background-image: url("../assets/svg/waves-background.svg");
     background-position: bottom;
     background-repeat: no-repeat;
 }
+#contact-page .content{
+    margin: 0;
+    width: 100%;
+}
 #contact-page #contact{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     min-height: 600px;
     max-width: 900px;
+    min-width: 300px;
     margin: 5vh auto;
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -974,16 +1007,13 @@ aside section .article-card-wrapper{
 #contact form *, #contact #contact-info{
     text-align: left;
     box-sizing: border-box;
-    max-width: 90vw;
     color: var(--primaryColor);
 }
 
 h3.info{
     margin-bottom: 4.5rem;
 }
-
-
-textarea#message{
+textarea #user-message{
     padding: 1rem;
 }
 
@@ -999,20 +1029,18 @@ textarea#message{
     margin-top: 0;
 }
 
-textarea#message::placeholder{
+textarea #user-message::placeholder{
     color: var(--subtleColor);
 }
 
 #contact-info{
-    padding: 1rem 5rem;
+    padding: 1rem;
     background-color: rgba(216, 234, 255, 1);
     grid-row: 2/-1;
-
 }
-
 #contact-info i {
     background-color: white;
-    color: var(--accentColor);
+    color: #5195e0;
     text-align: center;
     margin-right: 0.5rem;
     border-radius: 50px;
@@ -1020,8 +1048,8 @@ textarea#message::placeholder{
     padding:10px;
 }
 #contact form{
-    padding: 1rem 2rem 1rem 1rem;
-    max-width: 95vw;
+    padding: 1rem;
+    max-width: 90vw;
 }
 #contact form label{
     font-size: 1.2rem;
@@ -1041,6 +1069,7 @@ textarea{
     min-height: 200px;
     border-width: 1px;
     resize: none;
+    padding: 0.5rem;
 }
 #contact form input{
     min-height: 35px;
@@ -1057,12 +1086,13 @@ textarea{
     grid-auto-flow: column;
     gap: 2rem;
 }
-
+#contact form #name-row{
+    grid-auto-flow: row;
+}
 #contact form .form-group{
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
-
 }
 #button-wrapper{
     width: 100%;
@@ -1219,7 +1249,8 @@ footer form{
 footer form input{
     margin: 0;
     margin-bottom: 1rem;
-    min-width: 60%;
+    min-width: 50%;
+    width:95%;
     min-height: 40px;
     border-radius: 5px;
     border: none;
@@ -1230,6 +1261,15 @@ footer form input::placeholder{
 }
 footer form button{
     min-width: 150px;
+}
+.subscribed{
+    width: fit-content;
+    font-style: italic;
+    background-color: transparent;
+}
+.subscribed:hover{
+    cursor:default;
+    background-color: transparent;
 }
 footer a:hover{
     background-color: rgba(0, 121, 253, 0.1);
@@ -1278,7 +1318,7 @@ footer a:hover{
     display: flex;
 }
 #footer-logo{
-    width: 40%;
+    width: 50%;
     object-fit: contain;
 }
 .footer-menu-wrapper{
@@ -1320,25 +1360,56 @@ small{
     place-items: center;
     justify-content: center;
     min-height: 50px;
+    width: 100%;
+    height: 100%;
+    max-width: 80px;
 }
 
 ul#footer-socials li a {
-    margin-left: 1rem;
+   min-width: 50px;
 }
 /*Large Mobile*/
 @media only screen and (min-width:500px){
-
+    .box-overflow-gradient{
+        width: 100%;
+    }
+    #home-banner .media-text h1{
+        font-size: 3.5rem;
+    }
+    #home-banner .media-text p{
+        font-size: 1.2rem;
+    }
     main .content{
         overflow: hidden;
     }
+    .main-article .article-card-wrapper{
+        padding: 0 2rem;
+    }
+    .main-article .main-article-title{
+        font-size: 2rem;
+    }
+    .articles-grid article .article-card-link{
+        flex-direction: row;
+    }
+    .article-thumbnail{
+        height: auto;
+    }
+
     /*CONTACT*/
+    #contact-page .content{
+        margin: auto;
+        
+    }
     #contact form{
-        padding: 2rem 5rem;
+        padding: 2rem;
     }
 
     #contact form button{
         width: 150px;
         text-align: center;
+    }
+    #contact-info{
+        padding: 1rem 2rem;
     }
 
     /*AUTHORS*/
@@ -1348,7 +1419,7 @@ ul#footer-socials li a {
     /*FOOTER*/
     .newsletter-subscription form{
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: stretch;
         margin: 0;
         width: 100%;
     }
@@ -1419,6 +1490,7 @@ ul#footer-socials li a {
     }
     .media-cover .media-text{
         padding: 0 10%;
+        min-height: 600px;
     }
     .media-cover .media-text h1{
         font-size: var(--h1FontSize);
@@ -1472,6 +1544,9 @@ ul#footer-socials li a {
         grid-template-columns: 250px 1fr !important;
         gap: 2rem;
     }
+    #story-cover{
+        min-height: 600px;
+    }
     .story article{
         max-width: 900px;
         grid-column: 2/-1;
@@ -1515,6 +1590,13 @@ ul#footer-socials li a {
     .info{
         display: none;
     }
+    /*CONTACT*/
+    #contact form #name-row{
+        grid-auto-flow: column;
+    }
+    #contact-info{
+        padding: 1rem 5rem;
+    }
     /*AUTHORS*/
     #authors-page .grid{
         grid-template-columns: repeat(3,1fr);
@@ -1542,7 +1624,7 @@ ul#footer-socials li a {
     /*Footer*/
     .newsletter-subscription{
         grid-template-columns: 1fr 1fr;
-        gap: 5rem;
+        gap: 1.5rem;
     }
 
     .newsletter-subscription div *{
@@ -1566,6 +1648,9 @@ ul#footer-socials li a {
         justify-content: flex-end;
         width: 100%;
         text-align: center;
+    }
+    footer form input{
+        width: 30vw;
     }
 }
 /*Desktop*/
@@ -1637,21 +1722,27 @@ ul#footer-socials li a {
         grid-row-start: 1;
         grid-row-end: 3;
     }
-    #sources-page #gallery-grid .two-rows img{
+    #sources-page #gallery-grid .two-rows img,
+    #sources-page #gallery-grid .two-columns-1,
+    #sources-page #gallery-grid .two-columns-2{
         height: 100%;
     }
-    #sources-page #gallery-grid .two-columns{
+    #sources-page #gallery-grid .two-columns-1,
+    #sources-page #gallery-grid .two-columns-2{
         aspect-ratio: 2/1;
         height: 100%;
         width: 100%;
+    }
+    #sources-page #gallery-grid .two-columns-1{
         grid-column-start: 3;
         grid-column-end: 5;
         grid-row-start: 3;
     }
-    #sources-page #gallery-grid .two-columns img{
-        height: 100%;
+    #sources-page #gallery-grid .two-columns-2{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 5;
     }
-
     /*FOOTER*/
     .footer-menu-wrapper{
         width: 100%;
